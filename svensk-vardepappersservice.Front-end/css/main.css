@@ -258,6 +258,60 @@ header {
   left: 0;
   z-index: -1;
 }
+.page-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 25px 50px;
+}
+.page-count ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.page-count a {
+  color: #35444f;
+}
+.page-count a.prev {
+  margin-left: 20px;
+  width: 33%;
+  position: relative;
+}
+.page-count a.prev::before {
+  content: "<";
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: absolute;
+  left: -20px;
+}
+.page-count a.next {
+  margin-right: 20px;
+  width: 33%;
+  position: relative;
+  text-align: right;
+}
+.page-count a.next::after {
+  content: ">";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
 main {
   max-width: 1600px;
   width: 80%;
@@ -284,9 +338,12 @@ main .box nav ul {
   width: 100%;
 }
 main .box nav ul li {
-  font-family: "Open Sans", sans-serif;
   padding: 25px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+main .box nav ul li a {
+  font-family: "Open Sans", sans-serif;
+  color: #35444f;
   font-size: 1rem;
   font-weight: 800;
   display: -webkit-box;
@@ -296,10 +353,13 @@ main .box nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
-  color: #35444f;
 }
-main .box nav ul li.selected {
+main .box nav ul li.selected,
+main .box nav ul li:hover {
   background-color: #c0b59d;
+}
+main .box nav ul li.selected a,
+main .box nav ul li:hover a {
   color: #fff;
 }
 main .box nav ul li img {

@@ -20,20 +20,26 @@ main {
         width: 100%;
 
         li {
-          font-family: "Open Sans", sans-serif;
           padding: 25px 0;
           border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-          font-size: 1rem;
-          font-weight: 800;
-          display: flex;
-          flex-flow: row;
-          color: #35444f;
-          //   margin: 0 15px;
 
-          &.selected {
-            background-color: #c0b59d;
-            color: #fff;
+          a {
+            font-family: "Open Sans", sans-serif;
+            color: #35444f;
+            font-size: 1rem;
+            font-weight: 800;
+            display: flex;
+            flex-flow: row;
           }
+
+          &.selected,
+          &:hover {
+            background-color: #c0b59d;
+            a {
+              color: #fff;
+            }
+          }
+
           img {
             width: 30px;
             margin: 0 10px 0 25px;

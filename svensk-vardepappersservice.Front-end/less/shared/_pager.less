@@ -1,0 +1,45 @@
+.page-count {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 25px 50px;
+
+  ul {
+    display: flex;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: #35444f;
+
+    &.prev {
+      margin-left: 20px;
+      width: 33%;
+      position: relative;
+      &::before {
+        content: "<";
+        height: 20px;
+        width: 20px;
+        display: block;
+        position: absolute;
+        left: -20px;
+      }
+    }
+
+    &.next {
+      margin-right: 20px;
+      width: 33%;
+      position: relative;
+      text-align: right;
+      &::after {
+        content: ">";
+        height: 20px;
+        width: 20px;
+        position: absolute;
+      }
+    }
+  }
+}
