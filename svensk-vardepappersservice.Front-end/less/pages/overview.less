@@ -1,0 +1,37 @@
+.overview {
+  padding: 50px;
+  display: flex;
+  flex-flow: row;
+
+  + .overview {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &:hover {
+    box-shadow: 0 17px 33px -35px #00000f26, 0 -17px 33px -35px #00000f26;
+    border-top: none;
+    + .overview {
+      border-top: none;
+    }
+
+    a.button {
+      color: #fff;
+      background-color: #c0b59d;
+    }
+  }
+
+  &__content {
+    width: 80%;
+
+    p {
+      margin-bottom: 2em;
+    }
+  }
+  &__img {
+    width: 20%;
+
+    img {
+      width: 60px;
+    }
+  }
+}
