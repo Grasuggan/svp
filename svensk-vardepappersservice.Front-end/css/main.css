@@ -251,12 +251,44 @@ a.button:hover {
 }
 header {
   background-color: #c0b59d;
-  height: 136px;
+  height: 170px;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
   z-index: -1;
+}
+header .header-bg {
+  position: absolute;
+  width: 1850px;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+header .header-inner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .header-inner .header-logo {
+  z-index: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 136px;
+  max-width: 1600px;
+  width: 80%;
+  margin: 0 auto;
+}
+header .header-inner .header-logo img {
+  display: block;
+  max-width: 100%;
+  padding: 10px 0px 60px 0px;
 }
 .page-count {
   display: -webkit-box;
@@ -326,7 +358,7 @@ main .box {
   -webkit-box-shadow: 0 10px 60px 20px rgba(0, 0, 0, 0.15);
           box-shadow: 0 10px 60px 20px rgba(0, 0, 0, 0.15);
   background-color: white;
-  top: 60px;
+  top: 94px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

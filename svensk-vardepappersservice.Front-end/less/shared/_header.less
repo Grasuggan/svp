@@ -1,9 +1,39 @@
 header {
   background-color: #c0b59d;
-  height: 136px;
+  height: 170px;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
   z-index: -1;
+
+  .header-bg {
+    position: absolute;
+    width: 1850px;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+  .header-inner {
+    width: 100%;
+    display: flex;
+
+    .header-logo {
+      z-index: 1;
+      display: inline-flex;
+      height: 136px;
+      max-width: 1600px;
+      width: 80%;
+      margin: 0 auto;
+      img {
+        display: block;
+        max-width: 100%;
+        padding: 10px 0px 60px 0px;
+      }
+    }
+  }
 }
