@@ -578,9 +578,6 @@ main .box .main-section .main-section__heading p {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 30px;
   text-align: center;
   -webkit-box-align: center;
@@ -610,4 +607,56 @@ main .box .main-section .main-section__heading p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contacts .contact {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.contacts .contact .contact__image {
+  width: 50%;
+  max-width: 200px;
+  padding: 3em 30px 0;
+  margin: 0 auto;
+}
+.contacts .contact .contact__image img {
+  border-radius: 50%;
+}
+.contacts .contact__title {
+  text-align: center;
+  padding: 30px;
+}
+.contacts .contact__title p {
+  color: #3aa198;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.contacts .contact__info .contact__info-row img {
+  width: 10px;
+}
+.contacts .contact__info .contact__info-row span {
+  color: #aea091;
+}
+.contacts .contact__info .contact__info-row a {
+  color: #3aa198;
+  word-break: break-all;
 }
