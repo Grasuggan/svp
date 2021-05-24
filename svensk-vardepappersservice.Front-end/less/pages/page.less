@@ -50,12 +50,18 @@ main {
     .main-section {
       width: 75%;
 
-      .main-section__heading {
+      &__heading {
         padding: 26px 50px 15px 50px;
         display: flex;
         flex-flow: row;
         justify-content: space-between;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .main-section__back {
+          display: flex;
+          img {
+            margin-right: 10px;
+          }
+        }
         p {
           font-size: 1.16rem;
           font-weight: 800;
