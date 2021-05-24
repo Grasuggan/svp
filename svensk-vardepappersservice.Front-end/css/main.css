@@ -418,6 +418,11 @@ header .header-inner {
   display: -ms-flexbox;
   display: flex;
 }
+header .header-inner .search {
+  position: absolute;
+  right: 10%;
+  top: 30px;
+}
 header .header-inner .header-logo {
   z-index: 1;
   display: -webkit-inline-box;
@@ -681,6 +686,16 @@ main .box .main-section__heading p {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.overview__image.logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.overview__image.logo-container .logo-image {
+  margin: auto auto;
+  width: 300px;
+  display: block;
 }
 .overview__content {
   padding: 50px;
