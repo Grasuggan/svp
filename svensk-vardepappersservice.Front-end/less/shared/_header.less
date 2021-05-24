@@ -9,7 +9,7 @@ header {
 
   .header-bg {
     position: absolute;
-    width: 1800px;
+    max-width: 1800px;
     bottom: 0;
     left: 0;
     top: 0;
@@ -19,26 +19,38 @@ header {
     z-index: -1;
   }
   .header-inner {
-    width: 100%;
     display: flex;
+    max-width: 1800px;
+    width: 90%;
+    margin: 0 auto;
 
     .search {
-      position: absolute;
-      right: 10%;
-      top: 30px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+
+      img {
+        padding: 12px;
+        width: 15px;
+      }
     }
 
     .header-logo {
       z-index: 1;
       display: inline-flex;
       height: 136px;
-      max-width: 1800px;
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       img {
         display: block;
         max-width: 100%;
         padding: 10px 0px 60px 0px;
+
+        @media @m {
+          padding: 30px 0px 70px 0px;
+          width: 207px;
+        }
       }
     }
   }

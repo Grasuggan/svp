@@ -1,6 +1,10 @@
 .partners {
   display: flex;
 
+  @media @s {
+    flex-wrap: wrap;
+  }
+
   .partner {
     width: 50%;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
@@ -11,6 +15,10 @@
     text-align: center;
     align-items: center;
     justify-content: flex-end;
+
+    @media @s {
+      width: 100%;
+    }
 
     .partner__image {
       width: 70%;

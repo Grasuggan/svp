@@ -233,6 +233,15 @@ a.button:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media only screen and (max-width: 992px) {
+  .list-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    padding: 50px 30px;
+  }
+}
 .list-container.files {
   padding: 0;
   border-top: none;
@@ -240,12 +249,28 @@ a.button:hover {
 .list-container.files + .list-container {
   border-top: none;
 }
+@media only screen and (max-width: 992px) {
+  .list-container.files + .list-container {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
 .list-container.files + .list-container .list-container__content,
 .list-container.files + .list-container .file-container {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
+@media only screen and (max-width: 992px) {
+  .list-container.files + .list-container .list-container__content,
+  .list-container.files + .list-container .file-container {
+    border-top: none;
+  }
+}
 .list-container.files .list-container__content {
   padding: 2em 50px 0 50px;
+}
+@media only screen and (max-width: 992px) {
+  .list-container.files .list-container__content {
+    padding: 2em 30px 0 30px;
+  }
 }
 .list-container.files:hover {
   -webkit-box-shadow: none;
@@ -276,8 +301,18 @@ a.button:hover {
 .list-container__content p {
   margin-bottom: 2em;
 }
+@media only screen and (max-width: 992px) {
+  .list-container__img {
+    margin-bottom: 20px;
+  }
+}
 .list-container__img img {
   width: 60px;
+}
+@media only screen and (max-width: 992px) {
+  .list-container__img img {
+    width: 30px;
+  }
 }
 .file-container {
   border-left: 1px solid rgba(0, 0, 0, 0.05);
@@ -293,6 +328,17 @@ a.button:hover {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+@media only screen and (max-width: 992px) {
+  .file-container {
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .file-container img {
+    width: 20%;
+    margin-bottom: 30px;
+  }
 }
 .file-container .info-popup {
   position: absolute;
@@ -316,6 +362,18 @@ a.button:hover {
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
+@media only screen and (max-width: 992px) {
+  .file-container .info-popup {
+    visibility: visible;
+    opacity: 1;
+    left: 100%;
+    -webkit-transform: translate(-109%, 50px) scale(0.9);
+            transform: translate(-109%, 50px) scale(0.9);
+    width: 60%;
+    padding: 10px;
+    bottom: 80px;
+  }
+}
 .file-container .info-popup::after {
   content: "";
   width: 0;
@@ -327,6 +385,19 @@ a.button:hover {
   bottom: -10px;
   margin-left: -17px;
   left: 50%;
+}
+@media only screen and (max-width: 992px) {
+  .file-container .info-popup::after {
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #15384a;
+    position: absolute;
+    bottom: 50%;
+    margin-left: -17px;
+    left: 0;
+    -webkit-transform: translate(0, 50%) rotate(91deg);
+            transform: translate(0, 50%) rotate(91deg);
+  }
 }
 .file-container:hover {
   -webkit-box-shadow: -8px 0 37px -7px #00000f26;
@@ -392,6 +463,26 @@ a.button:hover {
 .col-100 {
   width: 100%;
 }
+@media only screen and (max-width: 992px) {
+  .col-5,
+  .col-10,
+  .col-15,
+  .col-20,
+  .col-25,
+  .col-30,
+  .col-35,
+  .col-40,
+  .col-50,
+  .col-60,
+  .col-60,
+  .col-65,
+  .col-70,
+  .col-85,
+  .col-90,
+  .col-95 {
+    width: 100%;
+  }
+}
 header {
   background-color: #c0b59d;
   height: 170px;
@@ -403,7 +494,7 @@ header {
 }
 header .header-bg {
   position: absolute;
-  width: 1800px;
+  max-width: 1800px;
   bottom: 0;
   left: 0;
   top: 0;
@@ -413,15 +504,26 @@ header .header-bg {
   z-index: -1;
 }
 header .header-inner {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1800px;
+  width: 90%;
+  margin: 0 auto;
 }
 header .header-inner .search {
-  position: absolute;
-  right: 10%;
-  top: 30px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+header .header-inner .search img {
+  padding: 12px;
+  width: 15px;
 }
 header .header-inner .header-logo {
   z-index: 1;
@@ -429,14 +531,19 @@ header .header-inner .header-logo {
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 136px;
-  max-width: 1800px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 header .header-inner .header-logo img {
   display: block;
   max-width: 100%;
   padding: 10px 0px 60px 0px;
+}
+@media only screen and (max-width: 992px) {
+  header .header-inner .header-logo img {
+    padding: 30px 0px 70px 0px;
+    width: 207px;
+  }
 }
 .page-count {
   display: -webkit-box;
@@ -451,6 +558,29 @@ header .header-inner .header-logo img {
           justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: 25px 50px;
+}
+@media only screen and (max-width: 992px) {
+  .page-count {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    padding: 15px 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .page-count + .page-count {
+    border: none;
+  }
+  .page-count .prev,
+  .page-count .next {
+    width: 50%;
+  }
+  .page-count a.next {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 .page-count ul {
   display: -webkit-box;
@@ -491,6 +621,9 @@ header .header-inner .header-logo img {
   color: #35444f;
   font-size: 1.08rem;
 }
+.page-count a:hover span {
+  color: rgba(53, 68, 79, 0.75);
+}
 .page-count a img {
   margin: 0 5px;
 }
@@ -511,10 +644,23 @@ main .box {
   display: -ms-flexbox;
   display: flex;
 }
+@media only screen and (max-width: 992px) {
+  main .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
 main .box nav {
   width: 25%;
   -webkit-box-shadow: 10px 0px 45px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 10px 0px 45px 0px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (max-width: 992px) {
+  main .box nav {
+    width: 100%;
+  }
 }
 main .box nav ul {
   width: 100%;
@@ -551,6 +697,11 @@ main .box nav ul li img {
 main .box .main-section {
   width: 75%;
 }
+@media only screen and (max-width: 992px) {
+  main .box .main-section {
+    width: 100%;
+  }
+}
 main .box .main-section__heading {
   padding: 26px 50px 15px 50px;
   display: -webkit-box;
@@ -565,6 +716,11 @@ main .box .main-section__heading {
           justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+@media only screen and (max-width: 992px) {
+  main .box .main-section__heading {
+    padding: 26px 20px 15px 20px;
+  }
+}
 main .box .main-section__heading .main-section__back {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -578,10 +734,26 @@ main .box .main-section__heading p {
   font-weight: 800;
   color: #111;
 }
+@media only screen and (max-width: 992px) {
+  .hide-m {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .show-m {
+    display: none !important;
+  }
+}
 .partners {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .partners {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .partners .partner {
   width: 50%;
@@ -602,6 +774,11 @@ main .box .main-section__heading p {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  .partners .partner {
+    width: 100%;
+  }
 }
 .partners .partner .partner__image {
   width: 70%;
@@ -629,6 +806,12 @@ main .box .main-section__heading p {
   display: -ms-flexbox;
   display: flex;
 }
+@media only screen and (max-width: 992px) {
+  .contacts {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 .contacts .contact {
   width: 33%;
   display: -webkit-box;
@@ -647,6 +830,11 @@ main .box .main-section__heading p {
           justify-content: space-between;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+@media only screen and (max-width: 992px) {
+  .contacts .contact {
+    width: 100%;
+  }
 }
 .contacts .contact .contact__image {
   width: 50%;

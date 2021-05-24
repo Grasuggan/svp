@@ -1,5 +1,8 @@
 .contacts {
   display: flex;
+  @media @m {
+    flex-wrap: wrap;
+  }
 
   .contact {
     width: 33%;
@@ -10,6 +13,10 @@
     justify-content: space-between;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media @m {
+      width: 100%;
+    }
 
     .contact__image {
       width: 50%;
