@@ -1,25 +1,37 @@
 main {
-  max-width: 1800px;
-  width: 90%;
+  max-width: 2460px;
+  width: 100%;
+  padding: 0 200px;
   margin: 0 auto;
   position: relative;
 
+  @media @xl {
+    padding: 0 100px;
+  }
+
+  @media @m {
+    padding: 0 30px;
+  }
+
   .box {
-    position: absolute;
+    position: relative;
     width: 100%;
     box-shadow: 0 10px 60px 20px rgba(0, 0, 0, 0.15);
     background-color: white;
     top: 94px;
     display: flex;
 
-    @media @m {
+    @media @l {
       flex-flow: column;
+    }
+    @media @m {
+      top: 154px;
     }
 
     nav {
-      width: 25%;
+      width: 20%;
       box-shadow: 10px 0px 45px 0px rgba(0, 0, 0, 0.15);
-      @media @m {
+      @media @l {
         width: 100%;
       }
 
@@ -27,7 +39,6 @@ main {
         width: 100%;
 
         li {
-          padding: 25px 0;
           border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
           a {
@@ -37,6 +48,19 @@ main {
             font-weight: 800;
             display: flex;
             flex-flow: row;
+            padding: 25px 25px;
+
+            @media only screen and (max-width: 1600px) {
+              padding: 25px 10px;
+            }
+
+            @media @xl {
+              font-size: 0.9rem;
+            }
+            @media @l {
+              font-size: 1rem;
+              padding: 25px 25px;
+            }
           }
 
           &.selected,
@@ -49,15 +73,15 @@ main {
 
           img {
             width: 30px;
-            margin: 0 10px 0 25px;
+            margin-right: 10px;
           }
         }
       }
     }
     .main-section {
-      width: 75%;
+      width: 80%;
 
-      @media @m {
+      @media @l {
         width: 100%;
       }
 
@@ -68,7 +92,7 @@ main {
         justify-content: space-between;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-        @media @m {
+        @media @l {
           padding: 26px 20px 15px 20px;
         }
         .main-section__back {
@@ -88,12 +112,17 @@ main {
 }
 
 .hide-m {
-  @media @m {
+  @media @l {
     display: none !important;
   }
 }
 .show-m {
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 1200px) {
     display: none !important;
   }
+}
+
+.footer {
+  display: block;
+  padding: 100px;
 }

@@ -1,7 +1,10 @@
 .partners {
   display: flex;
+  &:last-child {
+    margin-bottom: 200px;
+  }
 
-  @media @s {
+  @media @m {
     flex-wrap: wrap;
   }
 
@@ -16,7 +19,7 @@
     align-items: center;
     justify-content: flex-end;
 
-    @media @s {
+    @media @m {
       width: 100%;
     }
 
