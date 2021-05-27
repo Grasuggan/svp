@@ -1,13 +1,10 @@
 main {
-  max-width: 2460px;
+  max-width: 1600px;
   width: 100%;
-  padding: 0 200px;
+  padding: 0 40px;
   margin: 0 auto;
   position: relative;
-
-  @media @xl {
-    padding: 0 100px;
-  }
+  top: -74px;
 
   @media @m {
     padding: 0 30px;
@@ -18,20 +15,16 @@ main {
     width: 100%;
     box-shadow: 0 10px 60px 20px rgba(0, 0, 0, 0.15);
     background-color: white;
-    top: 94px;
     display: flex;
 
-    @media @l {
-      flex-flow: column;
-    }
     @media @m {
-      top: 154px;
+      flex-flow: column;
     }
 
     nav {
-      width: 20%;
+      width: 25%;
       box-shadow: 10px 0px 45px 0px rgba(0, 0, 0, 0.15);
-      @media @l {
+      @media @m {
         width: 100%;
       }
 
@@ -50,17 +43,17 @@ main {
             flex-flow: row;
             padding: 25px 25px;
 
-            @media only screen and (max-width: 1600px) {
-              padding: 25px 10px;
-            }
+            // @media only screen and (max-width: 1600px) {
+            //   padding: 25px 10px;
+            // }
 
-            @media @xl {
-              font-size: 0.9rem;
-            }
-            @media @l {
-              font-size: 1rem;
-              padding: 25px 25px;
-            }
+            // @media @xl {
+            //   font-size: 0.9rem;
+            // }
+            // @media @l {
+            //   font-size: 1rem;
+            //   padding: 25px 25px;
+            // }
           }
 
           &.selected,
@@ -79,9 +72,9 @@ main {
       }
     }
     .main-section {
-      width: 80%;
+      width: 75%;
 
-      @media @l {
+      @media @m {
         width: 100%;
       }
 
@@ -92,7 +85,7 @@ main {
         justify-content: space-between;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-        @media @l {
+        @media @m {
           padding: 26px 20px 15px 20px;
         }
         .main-section__back {
@@ -112,7 +105,7 @@ main {
 }
 
 .hide-m {
-  @media @l {
+  @media @m {
     display: none !important;
   }
 }

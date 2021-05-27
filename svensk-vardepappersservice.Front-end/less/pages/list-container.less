@@ -7,12 +7,12 @@
     width: 25%;
     justify-content: flex-end;
 
-    @media @l {
+    @media @m {
       justify-content: flex-start;
     }
   }
 
-  @media @l {
+  @media @m {
     flex-flow: column;
   }
 
@@ -23,7 +23,7 @@
     .list-container__content {
       margin-right: 0;
       width: 80%;
-      @media @l {
+      @media @m {
         width: 100%;
       }
     }
@@ -31,7 +31,7 @@
     + .list-container {
       border-top-color: transparent;
 
-      @media @l {
+      @media @m {
         border-top: 1px solid rgba(0, 0, 0, 0.05);
       }
 
@@ -39,7 +39,7 @@
       .file-container {
         border-top: 1px solid rgba(0, 0, 0, 0.05);
 
-        @media @l {
+        @media @m {
           border-top-color: transparent;
         }
       }
@@ -47,7 +47,7 @@
     .list-container__content {
       padding: 2em 50px 2em 50px;
 
-      @media @l {
+      @media @m {
         padding: 2em 30px 2em 30px;
       }
     }
@@ -76,7 +76,7 @@
     border-top-color: transparent;
     + .list-container {
       border-top-color: transparent;
-      @media @l {
+      @media @m {
         border-top-color: rgba(0, 0, 0, 0.05);
       }
     }
@@ -89,7 +89,7 @@
 
   &__content {
     margin-right: 20px;
-    @media @l {
+    @media @m {
       margin: 40px 0;
     }
     .button {
@@ -115,12 +115,12 @@
   justify-content: center;
   position: relative;
 
-  @media @l {
+  @media @m {
     padding: 0 30px;
   }
 
   img {
-    @media @l {
+    @media @m {
       width: 10%;
       margin-bottom: 30px;
     }
@@ -147,7 +147,7 @@
     opacity: 0;
     transition: all 0.15s ease;
 
-    @media @l {
+    @media @m {
       visibility: visible;
       opacity: 1;
       left: 100%;
@@ -170,7 +170,7 @@
       margin-left: -17px;
       left: 50%;
 
-      @media @l {
+      @media @m {
         border-left: 14px solid transparent;
         border-right: 14px solid transparent;
         border-top: 14px solid #15384a;
@@ -187,7 +187,7 @@
     box-shadow: -8px 0 37px -7px #00000f26;
     border-left-color: transparent;
 
-    @media @l {
+    @media @m {
       box-shadow: none;
     }
     .info-popup {
@@ -196,7 +196,7 @@
       visibility: visible;
       opacity: 1;
 
-      @media @l {
+      @media @m {
         transition: none;
         transform: translate(-109%, 50px) scale(0.9);
       }
@@ -256,7 +256,7 @@
   width: 100%;
 }
 
-@media @l {
+@media @m {
   .col-5,
   .col-10,
   .col-15,
