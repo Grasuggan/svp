@@ -4,7 +4,7 @@ main {
   padding: 0 40px;
   margin: 0 auto;
   position: relative;
-  top: -74px;
+  top: -76px;
 
   @media @m {
     padding: 0 30px;
@@ -20,57 +20,6 @@ main {
     @media @m {
       flex-flow: column;
     }
-
-    nav {
-      width: 25%;
-      box-shadow: 10px 0px 45px 0px rgba(0, 0, 0, 0.15);
-      @media @m {
-        width: 100%;
-      }
-
-      ul {
-        width: 100%;
-
-        li {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-          a {
-            font-family: "Open Sans", sans-serif;
-            color: #35444f;
-            font-size: 1rem;
-            font-weight: 800;
-            display: flex;
-            flex-flow: row;
-            padding: 25px 25px;
-
-            // @media only screen and (max-width: 1600px) {
-            //   padding: 25px 10px;
-            // }
-
-            // @media @xl {
-            //   font-size: 0.9rem;
-            // }
-            // @media @l {
-            //   font-size: 1rem;
-            //   padding: 25px 25px;
-            // }
-          }
-
-          &.selected,
-          &:hover {
-            background-color: #c0b59d;
-            a {
-              color: #fff;
-            }
-          }
-
-          img {
-            width: 30px;
-            margin-right: 10px;
-          }
-        }
-      }
-    }
     .main-section {
       width: 75%;
 
@@ -79,7 +28,7 @@ main {
       }
 
       &__heading {
-        padding: 26px 50px 15px 50px;
+        padding: 26px 50px 19px 50px;
         display: flex;
         flex-flow: row;
         justify-content: space-between;
@@ -98,6 +47,7 @@ main {
           font-size: 1.16rem;
           font-weight: 800;
           color: #111;
+          margin-bottom: 0;
         }
       }
     }

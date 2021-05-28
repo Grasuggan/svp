@@ -4,3 +4,10 @@ listItems.forEach(function (item) {
     window.location = item.querySelector(".button").href;
   });
 });
+
+var mobileNav = document.querySelector(".mobile-nav");
+
+mobileNav.addEventListener("click", function (e) {
+  e.preventDefault();
+  mobileNav.classList.toggle("mobile-nav-open");
+});
