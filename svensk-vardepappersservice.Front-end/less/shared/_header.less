@@ -27,7 +27,7 @@ header {
     margin: 0 auto;
 
     @media @m {
-      padding: 0 30px;
+      padding: 30px;
       flex-flow: column;
     }
 
@@ -73,22 +73,27 @@ header {
 
     .header-logo {
       z-index: 1;
-      display: inline-flex;
-      height: 80px;
+      // display: inline-flex;
+      // height: 80px;
+      // width: 100%;
+      // margin: 0 auto;
+      display: block;
       width: 100%;
-      margin: 0 auto;
 
-      @media @m {
-        height: 95px;
-      }
+      // @media @m {
+      //   height: 83px;
+      //   margin: 20px auto 0 auto;
+      // }
       img {
         display: block;
         max-width: 100%;
         padding-top: 10px;
 
+        width: 400px;
+
         @media @m {
-          width: 335px;
-          height: 70px;
+          width: 300px;
+          // height: 70px;
         }
       }
     }
@@ -219,6 +224,7 @@ nav {
         display: flex;
         flex-flow: row;
         padding: 25px 25px;
+        align-items: center;
       }
 
       &.selected,
