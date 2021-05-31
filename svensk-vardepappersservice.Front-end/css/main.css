@@ -557,8 +557,7 @@ header .header-bg {
   top: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
+  width: 100%;
 }
 header .header-inner {
   display: -webkit-box;
