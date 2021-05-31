@@ -226,7 +226,7 @@ a.button:hover {
   background-color: #c0b59d;
 }
 .list-container {
-  padding: 70px;
+  padding: 2em 50px 2em 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
