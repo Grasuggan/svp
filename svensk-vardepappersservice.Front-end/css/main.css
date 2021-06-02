@@ -798,9 +798,23 @@ nav ul li.selected a,
 nav ul li:hover a {
   color: #fff;
 }
+nav ul li.selected img.show-hover,
+nav ul li:hover img.show-hover {
+  display: block;
+}
+nav ul li.selected img.show,
+nav ul li:hover img.show {
+  display: none;
+}
 nav ul li img {
-  width: 30px;
-  margin-right: 10px;
+  width: 25px;
+  margin-right: 25px;
+}
+nav ul li img.show-hover {
+  display: none;
+}
+nav ul li img.show {
+  display: block;
 }
 @media only screen and (max-width: 992px) {
   nav {
@@ -902,7 +916,8 @@ nav ul li img {
   color: rgba(53, 68, 79, 0.75);
 }
 .page-count a img {
-  margin: 0 5px;
+  margin: 0 10px;
+  width: 25px;
 }
 main {
   max-width: 1600px;
@@ -969,6 +984,7 @@ main .box .main-section__heading .main-section__back {
 }
 main .box .main-section__heading .main-section__back img {
   margin-right: 10px;
+  width: 23px;
 }
 main .box .main-section__heading p {
   font-size: 1.16rem;
@@ -1035,6 +1051,11 @@ main .box .main-section__heading p {
   padding: 3em 30px;
   margin: 0 auto;
 }
+.partners .partner .partner__image img {
+  width: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .partners .partner .button-container {
   margin: 3em 0;
 }
@@ -1088,7 +1109,7 @@ main .box .main-section__heading p {
 .contacts .contact .contact__image {
   width: 50%;
   max-width: 200px;
-  padding: 0 30px 0;
+  padding: 0 50px 0;
   margin: 0 auto;
 }
 .contacts .contact .contact__image img {

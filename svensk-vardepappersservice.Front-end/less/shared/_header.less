@@ -234,11 +234,24 @@ nav {
         a {
           color: #fff;
         }
+        img.show-hover {
+          display: block;
+        }
+        img.show {
+          display: none;
+        }
       }
 
       img {
-        width: 30px;
-        margin-right: 10px;
+        width: 25px;
+        margin-right: 25px;
+
+        &.show-hover {
+          display: none;
+        }
+        &.show {
+          display: block;
+        }
       }
     }
   }
