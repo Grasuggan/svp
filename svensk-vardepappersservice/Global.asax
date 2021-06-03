@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="svensk_vardepappersservice.MvcApplication" Language="C#" %>
