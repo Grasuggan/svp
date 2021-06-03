@@ -1,0 +1,48 @@
+.overview {
+  &__image {
+    height: 350px;
+
+    @media @m {
+      height: 150px;
+    }
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.logo-container {
+      display: flex;
+      .logo-image {
+        margin: auto auto;
+        width: 300px;
+        display: block;
+
+        @media @m {
+          width: 250px;
+        }
+      }
+    }
+  }
+  &__content {
+    padding: 50px 80px 80px;
+
+    @media @m {
+      padding: 10px 30px 30px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1em;
+    }
+
+    .pre-head {
+      margin-bottom: 2.5em;
+    }
+  }
+}
