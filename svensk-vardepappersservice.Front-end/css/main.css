@@ -807,7 +807,7 @@ nav ul li:hover img.show {
   display: none;
 }
 nav ul li img {
-  width: 25px;
+  width: 23px;
   margin-right: 25px;
 }
 nav ul li img.show-hover {
