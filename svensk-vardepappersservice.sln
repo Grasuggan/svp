@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "svensk-vardepappersservice.core", "svensk-vardepappersservice.core\svensk-vardepappersservice.core.csproj", "{3ADFAA90-9950-4A14-AB57-A9B37DB11BBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvenskVardepappersservice.Core", "SvenskVardepappersservice.Core\SvenskVardepappersservice.Core.csproj", "{7BBC124B-EC04-451C-AFF8-92D125A9017E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "svensk-vardepappersservice.web", "svensk-vardepappersservice.web\svensk-vardepappersservice.web\svensk-vardepappersservice.web.csproj", "{E6A7BBF9-AC06-4511-9C1B-F6D3BEB296D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvenskVardepappersservice.Web", "SvenskVardepappersservice.Web\SvenskVardepappersservice.Web.csproj", "{B79F6CD1-32A6-4E54-B227-556E6BAC12B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Web.PublishedModels", "Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj", "{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3ADFAA90-9950-4A14-AB57-A9B37DB11BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ADFAA90-9950-4A14-AB57-A9B37DB11BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ADFAA90-9950-4A14-AB57-A9B37DB11BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ADFAA90-9950-4A14-AB57-A9B37DB11BBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6A7BBF9-AC06-4511-9C1B-F6D3BEB296D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6A7BBF9-AC06-4511-9C1B-F6D3BEB296D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6A7BBF9-AC06-4511-9C1B-F6D3BEB296D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6A7BBF9-AC06-4511-9C1B-F6D3BEB296D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBC124B-EC04-451C-AFF8-92D125A9017E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBC124B-EC04-451C-AFF8-92D125A9017E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBC124B-EC04-451C-AFF8-92D125A9017E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBC124B-EC04-451C-AFF8-92D125A9017E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79F6CD1-32A6-4E54-B227-556E6BAC12B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79F6CD1-32A6-4E54-B227-556E6BAC12B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79F6CD1-32A6-4E54-B227-556E6BAC12B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79F6CD1-32A6-4E54-B227-556E6BAC12B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
