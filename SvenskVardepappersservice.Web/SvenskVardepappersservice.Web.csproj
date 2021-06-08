@@ -465,10 +465,6 @@
         <Content Include="Scripts\jquery-3.3.1.min.map" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\SvenskVardepappersservice.PublishedModels\SvenskVardepappersservice.PublishedModels.csproj">
-        <Project>{0c2cba44-b09e-4374-bb21-aa7e535db164}</Project>
-        <Name>SvenskVardepappersservice.PublishedModels</Name>
-      </ProjectReference>
       <ProjectReference Include="..\Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj">
         <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
         <Name>Umbraco.Web.PublishedModels</Name>
