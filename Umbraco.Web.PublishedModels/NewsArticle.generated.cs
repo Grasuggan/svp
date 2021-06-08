@@ -45,11 +45,18 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Body text
+		/// Author
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("bodyText")]
-		public virtual string BodyText => this.Value<string>("bodyText");
+		[ImplementPropertyType("author")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent Author => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("author");
+
+		///<summary>
+		/// Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("date")]
+		public virtual global::System.DateTime Date => this.Value<global::System.DateTime>("date");
 
 		///<summary>
 		/// Heading
@@ -64,5 +71,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("summary")]
 		public virtual string Summary => this.Value<string>("summary");
+
+		///<summary>
+		/// Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("text")]
+		public virtual global::System.Web.IHtmlString Text => this.Value<global::System.Web.IHtmlString>("text");
 	}
 }

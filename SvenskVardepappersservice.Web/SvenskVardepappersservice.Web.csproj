@@ -358,6 +358,46 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+        <Content Include="assets\appicon.png" />
+        <Content Include="assets\bg.svg" />
+        <Content Include="assets\FullLogo.png" />
+        <Content Include="assets\Ikoner\contact.svg" />
+        <Content Include="assets\Ikoner\ctrl-left.svg" />
+        <Content Include="assets\Ikoner\ctrl-right.svg" />
+        <Content Include="assets\Ikoner\file-doc.svg" />
+        <Content Include="assets\Ikoner\file-pdf.svg" />
+        <Content Include="assets\Ikoner\file-pptx.svg" />
+        <Content Include="assets\Ikoner\file-xlsx.svg" />
+        <Content Include="assets\Ikoner\mail.svg" />
+        <Content Include="assets\Ikoner\new-construction.svg" />
+        <Content Include="assets\Ikoner\news-white.svg" />
+        <Content Include="assets\Ikoner\documents-white.svg" />
+        <Content Include="assets\Ikoner\documents.svg" />
+        <Content Include="assets\Ikoner\paper-2.svg" />
+        <Content Include="assets\Ikoner\news.svg" />
+        <Content Include="assets\Ikoner\phone-toolbar.svg" />
+        <Content Include="assets\Ikoner\partners-white.svg" />
+        <Content Include="assets\Ikoner\partners.svg" />
+        <Content Include="assets\Ikoner\contacts-white.svg" />
+        <Content Include="assets\Ikoner\contacts.svg" />
+        <Content Include="assets\Ikoner\view-white.svg" />
+        <Content Include="assets\Ikoner\view.svg" />
+        <Content Include="assets\img\arrow-left.svg" />
+        <Content Include="assets\img\arrow-right.svg" />
+        <Content Include="assets\img\bös2.PNG" />
+        <Content Include="assets\img\bös3.PNG" />
+        <Content Include="assets\img\city.jpg" />
+        <Content Include="assets\img\file-pdf.png" />
+        <Content Include="assets\img\mail.png" />
+        <Content Include="assets\img\paper.png" />
+        <Content Include="assets\img\partner1.png" />
+        <Content Include="assets\img\partner2.png" />
+        <Content Include="assets\img\partner3.png" />
+        <Content Include="assets\img\partner4.png" />
+        <Content Include="assets\img\person-icon.png" />
+        <Content Include="assets\img\phone-toolbar.png" />
+        <Content Include="assets\Logo.png" />
+        <Content Include="assets\search.svg" />
         <Content Include="Config\BackOfficeTours\getting-started.json" />
         <Content Include="Config\grid.editors.config.js" />
         <Content Include="Config\Lang\cs-CZ.user.xml" />
@@ -390,6 +430,7 @@
         <Content Include="fonts\glyphicons-halflings-regular.svg" />
         <Content Include="Content\Site.css" />
         <Content Include="Global.asax" />
+        <Content Include="Scripts\app.js" />
         <Content Include="Scripts\bootstrap.js" />
         <Content Include="Scripts\bootstrap.min.js" />
         <None Include="Config\ClientDependency.config" />
@@ -432,6 +473,7 @@
         <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
         <Content Include="Views\Partner.cshtml" />
         <Content Include="Views\Partners.cshtml" />
+        <Content Include="Views\SerachResult.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>

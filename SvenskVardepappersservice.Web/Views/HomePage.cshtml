@@ -1,5 +1,85 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var news = Model.Root().Children<News>().First().Children<NewsArticle>().OrderByDescending(x => x.CreateDate).Take(3);
 }
+
+<div class="main-section__heading">
+    <h1>@Model.Name</h1>
+    @* <p>Sida 1/3</p> *@
+</div>
+
+@foreach (var article in news)
+{
+    <div class="list-container list-spacing">
+        <div class="list-container__img">
+            <img src="assets/img/paper.png"/>
+        </div>
+        <div class="list-container__content col-85">
+            <div class="pre-head">
+                @article.Date
+            </div>
+            <h2>
+                @article.Value("heading", fallback: Fallback.ToDefaultValue, defaultValue: article.Name)
+            </h2>
+            <p>
+                @article.Summary
+            </p>
+
+            @if (!article.Url().IsNullOrWhiteSpace())
+            {
+                <a href="@article.Url()" class="button">Läs mer</a>
+            }
+        </div>
+    </div>
+}
+
+@* TODO Implement pagination *@
+@* <div class="page-count"> *@
+@*     <a href="/" class="prev"> *@
+@*         <img src="assets/Ikoner/ctrl-left.svg"/> *@
+@*         <span> *@
+@*             Föregående sida *@
+@*         </span> *@
+@*     </a> *@
+@* *@
+@*     <ul class="hide-m"> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* *@
+@* *@
+@*     <a href="/" class="next"> *@
+@*         <span>Nästa sida</span> *@
+@*         <img src="assets/Ikoner/ctrl-right.svg"/> *@
+@*     </a> *@
+@* *@
+@* *@
+@* </div> *@
+@* <div class="page-count show-m"> *@
+@*     <ul> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* </div> *@

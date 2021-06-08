@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-	Layout = null;
+    Layout = null;
+    var children = Model.Root().Children();
 }
 
 @* the fun starts here *@
@@ -9,12 +10,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVP - Front-end</title>
+    <title>Svensk Vardepappersservice</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-@RenderBody()
+<header>
+    <div class="header-bg lazyloaded" style="background-image:url(/assets/bg.svg)"></div>
+    <div class="header-inner">
+        <div class="header-logo">
+            <img src="/assets/Logo.png"/>
+        </div>
+        <form class="search">
+            <!-- <input type="text" placeholder="Sök"/> -->
+            <input type="text" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
+            <img src="/assets/search.svg"/>
+        </form>
+
+    </div>
+</header>
+<main>
+    <div class="box">
+        <a class="mobile-nav">
+            <button class="hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">
+                        <img class="show" src="/assets/Ikoner/view.svg"/><img class="show-hover" src="/assets/Ikoner/view-white.svg"/><span>@Model.Root().Name</span>
+                    </a>
+                </li>
+                @foreach
+                    (var child in children)
+                {
+                    <li>
+                        @{ var url = child.Url() ?? ""; }
+                        <a href="@url">
+
+                            @{
+                                var srcBlack = "/assets/Ikoner/" + child.ContentType.Alias + ".svg";
+                                var srcWhite = "/assets/Ikoner/" + child.ContentType.Alias + "-white.svg";
+                            }
+                            <img class="show" src="@srcBlack"/><img class="show-hover" src="@srcWhite"/><span>@child.Name</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+        <!-- <nav>
+            <ul>
+                <li><a href="/svenskvardepappersservice/index.html"><img src="assets/Ikoner/view-white.svg" /><span>Översikt</span></a></li>
+                <li><a href="/svenskvardepappersservice/news.html"><img src="assets/Ikoner/paper.svg" /><span>Nyhetsarkiv</span></a></li>
+                <li class="selected"><a href="/svenskvardepappersservice/documents.html"><img src="assets/Ikoner/open-folder.svg" /><span>Dokument</span></a></li>
+                <li><a href="/svenskvardepappersservice/partners.html"><img src="assets/Ikoner/privacy-policy.svg" /><span>Samarbetsparners</span></a></li>
+                <li><a href="/svenskvardepappersservice/contact.html"><img src="assets/Ikoner/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
+            </ul>
+        </nav> -->
+        <div class="main-section">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+</main>
+<script src="/scripts/app.js"></script>
 </body>

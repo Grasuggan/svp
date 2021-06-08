@@ -51,6 +51,7 @@
         <Compile Include="NewsArticle.generated.cs" />
         <Compile Include="Partner.generated.cs" />
         <Compile Include="Partners.generated.cs" />
+        <Compile Include="SerachResult.generated.cs" />
         <Compile Include="VectorGraphics.generated.cs" />
         <Compile Include="Video.generated.cs" />
     </ItemGroup>

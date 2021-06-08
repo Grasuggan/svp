@@ -1,5 +1,94 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Documents>
+@using NUnit.Framework
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var documents = Model.Children<Document>();
 }
+
+
+<div class="main-section__heading">
+    <h1>@Model.Name</h1>
+    @* <p>Sida 1/3</p> *@
+</div>
+
+@foreach (var document in documents)
+{
+    var fileUrl = document.File.MediaItem.Url();
+    var suffix = fileUrl.Substring(fileUrl.LastIndexOf('.') + 1);
+    <div class="list-container files">
+        <div class="list-container__content">
+            <div class="pre-head">
+
+            </div>
+            <h2>@document.Name</h2>
+            <p>
+                @document.Description
+            </p>
+        </div>
+
+        <a href="@fileUrl" class="file-container">
+            @if (suffix == "doc" || suffix == "pdf" || suffix == "pptx" || suffix == "xlsx")
+            {
+                var src = "/assets/ikoner/file-" + suffix + ".svg";
+                <img src="@src" alt=""/>
+            }
+            else
+            {
+                <img src="/assets/ikoner/paper-2.svg" alt=""/>
+            }
+                <div class="info-popup">
+                    @document.File.MediaItem.Name
+                </div>            
+            
+
+        </a>
+    </div>
+}
+
+@* TODO implement pagination *@
+@* <div class="page-count"> *@
+@*     <a href="/" class="prev"> *@
+@*         <img src="/assets/Ikoner/ctrl-left.svg"/> *@
+@*         <span> *@
+@*             Föregående sida *@
+@*         </span> *@
+@*     </a> *@
+@* *@
+@*     <ul class="hide-m"> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* *@
+@* *@
+@*     <a href="/" class="next"> *@
+@*         <span>Nästa sida</span> *@
+@*         <img src="/assets/Ikoner/ctrl-right.svg"/> *@
+@*     </a> *@
+@* </div> *@
+@* <div class="page-count show-m"> *@
+@*     <ul> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* </div> *@
