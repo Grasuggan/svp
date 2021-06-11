@@ -2,7 +2,12 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
-    var news = Model.Root().Children<News>().First().Children<NewsArticle>().OrderByDescending(x => x.CreateDate).Take(3);
+    // TODO Select which articles to be displayed
+    var news = Model
+        .Children<News>()
+        .First()
+        .Children<NewsArticle>()
+        .OrderByDescending(x => x.CreateDate);
 }
 
 <div class="main-section__heading">
@@ -14,11 +19,11 @@
 {
     <div class="list-container list-spacing">
         <div class="list-container__img">
-            <img src="assets/img/paper.png"/>
+            <img src="/assets/img/paper.png"/>
         </div>
         <div class="list-container__content col-85">
             <div class="pre-head">
-                @article.Date
+                @article.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: article.CreateDate).ToString("d MMMM yyyy")
             </div>
             <h2>
                 @article.Value("heading", fallback: Fallback.ToDefaultValue, defaultValue: article.Name)
@@ -38,7 +43,7 @@
 @* TODO Implement pagination *@
 @* <div class="page-count"> *@
 @*     <a href="/" class="prev"> *@
-@*         <img src="assets/Ikoner/ctrl-left.svg"/> *@
+@*         <img src="assets/Icons/ctrl-left.svg"/> *@
 @*         <span> *@
 @*             Föregående sida *@
 @*         </span> *@
@@ -62,7 +67,7 @@
 @* *@
 @*     <a href="/" class="next"> *@
 @*         <span>Nästa sida</span> *@
-@*         <img src="assets/Ikoner/ctrl-right.svg"/> *@
+@*         <img src="assets/Icons/ctrl-right.svg"/> *@
 @*     </a> *@
 @* *@
 @* *@

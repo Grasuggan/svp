@@ -66,6 +66,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Heading => this.Value<string>("heading");
 
 		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("image")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops Image => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("image");
+
+		///<summary>
 		/// Summary: Shorter summary to display with the heading on the front page, for example.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]

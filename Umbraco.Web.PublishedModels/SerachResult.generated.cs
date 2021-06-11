@@ -19,50 +19,29 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Document</summary>
-	[PublishedModel("document")]
-	public partial class Document : PublishedContentModel
+	/// <summary>Serach result</summary>
+	[PublishedModel("serachResult")]
+	public partial class SerachResult : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		public new const string ModelTypeAlias = "document";
+		public new const string ModelTypeAlias = "serachResult";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Document, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SerachResult, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Document(IPublishedContent content)
+		public SerachResult(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Date
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("date")]
-		public virtual global::System.DateTime Date => this.Value<global::System.DateTime>("date");
-
-		///<summary>
-		/// Description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("description")]
-		public virtual string Description => this.Value<string>("description");
-
-		///<summary>
-		/// Upload File
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("uploadFile")]
-		public virtual string UploadFile => this.Value<string>("uploadFile");
 	}
 }

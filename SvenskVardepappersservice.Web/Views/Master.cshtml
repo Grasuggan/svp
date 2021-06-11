@@ -18,15 +18,16 @@
 </head>
 <body>
 <header>
-    <div class="header-bg lazyloaded" style="background-image:url(/assets/bg.svg)"></div>
+    @{ const string bgUrl = "/assets/bg.svg";}
+    <div class="header-bg lazyloaded" style="background-image:url(@bgUrl)"></div>
     <div class="header-inner">
         <div class="header-logo">
-            <img src="/assets/Logo.png"/>
+            <img src="/assets/Logo.png" alt=""/>
         </div>
         <form class="search">
             <!-- <input type="text" placeholder="Sök"/> -->
             <input type="text" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
-            <img src="/assets/search.svg"/>
+            <img src="/assets/search.svg" alt=""/>
         </form>
 
     </div>
@@ -42,23 +43,24 @@
         </a>
         <nav>
             <ul>
-                <li>
+                @{ var selected = Model == Model.Root() ? "selected" : ""; }
+                <li class="@selected">
                     <a href="/">
-                        <img class="show" src="/assets/Ikoner/view.svg"/><img class="show-hover" src="/assets/Ikoner/view-white.svg"/><span>@Model.Root().Name</span>
+                        <img class="show" src="/assets/Icons/view.svg" alt=""/><img class="show-hover" src="/assets/Icons/view-white.svg" alt=""/><span>@Model.Root().Name</span>
                     </a>
                 </li>
-                @foreach
-                    (var child in children)
+                @foreach (var child in children)
                 {
-                    <li>
+                    selected = child == Model || child == Model.Parent ? "selected" : "";
+                    <li class="@selected">
                         @{ var url = child.Url() ?? ""; }
                         <a href="@url">
 
                             @{
-                                var srcBlack = "/assets/Ikoner/" + child.ContentType.Alias + ".svg";
-                                var srcWhite = "/assets/Ikoner/" + child.ContentType.Alias + "-white.svg";
+                                var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
+                                var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
                             }
-                            <img class="show" src="@srcBlack"/><img class="show-hover" src="@srcWhite"/><span>@child.Name</span>
+                            <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
                         </a>
                     </li>
                 }
@@ -66,11 +68,11 @@
         </nav>
         <!-- <nav>
             <ul>
-                <li><a href="/svenskvardepappersservice/index.html"><img src="assets/Ikoner/view-white.svg" /><span>Översikt</span></a></li>
-                <li><a href="/svenskvardepappersservice/news.html"><img src="assets/Ikoner/paper.svg" /><span>Nyhetsarkiv</span></a></li>
-                <li class="selected"><a href="/svenskvardepappersservice/documents.html"><img src="assets/Ikoner/open-folder.svg" /><span>Dokument</span></a></li>
-                <li><a href="/svenskvardepappersservice/partners.html"><img src="assets/Ikoner/privacy-policy.svg" /><span>Samarbetsparners</span></a></li>
-                <li><a href="/svenskvardepappersservice/contact.html"><img src="assets/Ikoner/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
+                <li><a href="/svenskvardepappersservice/index.html"><img src="assets/Icons/view-white.svg" /><span>Översikt</span></a></li>
+                <li><a href="/svenskvardepappersservice/news.html"><img src="assets/Icons/paper.svg" /><span>Nyhetsarkiv</span></a></li>
+                <li class="selected"><a href="/svenskvardepappersservice/documents.html"><img src="assets/Icons/open-folder.svg" /><span>Dokument</span></a></li>
+                <li><a href="/svenskvardepappersservice/partners.html"><img src="assets/Icons/privacy-policy.svg" /><span>Samarbetsparners</span></a></li>
+                <li><a href="/svenskvardepappersservice/contact.html"><img src="assets/Icons/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
             </ul>
         </nav> -->
         <div class="main-section">

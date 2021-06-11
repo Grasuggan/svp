@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Documents>
-@using NUnit.Framework
+@using Lucene.Net.Index
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
@@ -14,42 +14,51 @@
 
 @foreach (var document in documents)
 {
-    var fileUrl = document.File.MediaItem.Url();
-    var suffix = fileUrl.Substring(fileUrl.LastIndexOf('.') + 1);
-    <div class="list-container files">
-        <div class="list-container__content">
-            <div class="pre-head">
+    if (document.UploadFile != null)
+    {
+        var fileUrl = document.UploadFile;
+        var suffix = fileUrl.Substring(fileUrl.LastIndexOf('.') + 1);
+        var fileName = fileUrl.Substring(fileUrl.LastIndexOf('/') + 1);
+        <div class="list-container files">
+            <div class="list-container__content">
+                <div class="pre-head">
 
+                    @document.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: document.CreateDate).ToString("d MMMM yyyy")
+                </div>
+                <h2>@document.Name</h2>
+                <p>
+                    @document.Description
+                </p>
             </div>
-            <h2>@document.Name</h2>
-            <p>
-                @document.Description
-            </p>
-        </div>
 
-        <a href="@fileUrl" class="file-container">
-            @if (suffix == "doc" || suffix == "pdf" || suffix == "pptx" || suffix == "xlsx")
-            {
-                var src = "/assets/ikoner/file-" + suffix + ".svg";
-                <img src="@src" alt=""/>
-            }
-            else
-            {
-                <img src="/assets/ikoner/paper-2.svg" alt=""/>
-            }
+            <a href="@fileUrl" class="file-container">
+                @if (suffix == "doc" || suffix == "pdf" || suffix == "pptx" || suffix == "xlsx")
+                {
+                    var src = "/assets/Icons/file-" + suffix + ".svg";
+                    <img src="@src" alt=""/>
+                }
+                else if (fileUrl == "")
+                {
+                    
+                }
+                else
+                {
+                    <img src="/assets/Icons/paper-2.svg" alt=""/>
+                }
                 <div class="info-popup">
-                    @document.File.MediaItem.Name
-                </div>            
-            
+                    @fileName
+                </div>
 
-        </a>
-    </div>
+
+            </a>
+        </div>
+    }
 }
 
 @* TODO implement pagination *@
 @* <div class="page-count"> *@
 @*     <a href="/" class="prev"> *@
-@*         <img src="/assets/Ikoner/ctrl-left.svg"/> *@
+@*         <img src="/assets/Icons/ctrl-left.svg"/> *@
 @*         <span> *@
 @*             Föregående sida *@
 @*         </span> *@
@@ -73,7 +82,7 @@
 @* *@
 @*     <a href="/" class="next"> *@
 @*         <span>Nästa sida</span> *@
-@*         <img src="/assets/Ikoner/ctrl-right.svg"/> *@
+@*         <img src="/assets/Icons/ctrl-right.svg"/> *@
 @*     </a> *@
 @* </div> *@
 @* <div class="page-count show-m"> *@

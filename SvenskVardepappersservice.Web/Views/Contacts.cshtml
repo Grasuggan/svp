@@ -10,7 +10,7 @@
     <h1>@Model.Name</h1>
 </div>
 
-@* TODO 3 on each row *@
+@* TODO 3 contacts on each row *@
 <div class="contacts">
     @foreach (var contact in contacts)
     {
@@ -24,7 +24,7 @@
                 }
                 else
                 {
-                    <img src="/assets/Ikoner/contact.svg" alt="Bild saknas"/>
+                    <img src="/assets/Icons/contact.svg" alt="Bild saknas"/>
                 }
             </div>
             <div class="contact__title">
@@ -33,20 +33,67 @@
             </div>
             <div class="contact__info">
                 <div class="contact__info-row">
-                    <img src="/assets/Ikoner/phone-toolbar.svg"/>
+                    <img src="/assets/Icons/phone-toolbar.svg"/>
                     <span> Gruppnummer: </span>
                     <a href="phone:@contact.GroupNumber">@contact.GroupNumber</a>
                 </div>
                 <div class="contact__info-row">
-                    <img src="/assets/Ikoner/phone-toolbar.svg"/>
+                    <img src="/assets/Icons/phone-toolbar.svg"/>
                     <span> Direktnummer: </span>
                     <a href="phone:@contact.DirectNumber">@contact.DirectNumber</a>
                 </div>
                 <div class="contact__info-row">
-                    <img src="/assets/Ikoner/mail.svg"/>
+                    <img src="/assets/Icons/mail.svg"/>
                     <a href="mailto:@contact.Email">@contact.Email</a>
                 </div>
             </div>
         </div>
     }
 </div>
+
+@* TODO implement pagination *@
+@* <div class="page-count"> *@
+@*     <a href="/" class="prev"> *@
+@*         <img src="/assets/Icons/ctrl-left.svg"/> *@
+@*         <span> *@
+@*             Föregående sida *@
+@*         </span> *@
+@*     </a> *@
+@* *@
+@*     <ul class="hide-m"> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* *@
+@* *@
+@*     <a href="/" class="next"> *@
+@*         <span>Nästa sida</span> *@
+@*         <img src="/assets/Icons/ctrl-right.svg"/> *@
+@*     </a> *@
+@* </div> *@
+@* <div class="page-count show-m"> *@
+@*     <ul> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* </div> *@

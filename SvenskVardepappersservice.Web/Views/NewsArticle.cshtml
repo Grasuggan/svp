@@ -1,6 +1,31 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NewsArticle>
+@using Umbraco.Web.Composing
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
 }
 
+@* TODO Where should this redirect? *@
+<div class="main-section__heading">
+    <a href="@Model.Parent.Url()" class="main-section__back">
+        <img src="/assets/Icons/ctrl-left.svg" alt="">
+        <h1>@Model.Parent.Name</h1>
+    </a>
+</div>
+
+<div class="overview">
+    <section class="overview__image">
+        @if (Model.Image != null)
+        {
+            <img class="bg-image lazyloaded" src="@Model.Image.MediaItem.Url()" alt=""/>
+        }
+    </section>
+    <div class="overview__content">
+        <div class="pre-head">
+            @Model.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: Model.CreateDate).ToString("d MMMM yyyy")
+        </div>
+        <h1> Översikt </h1>
+        @Model.Text
+    </div>
+</div>
+@* TODO Author *@
