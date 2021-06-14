@@ -635,7 +635,7 @@ header .header-inner .header-logo {
 header .header-inner .header-logo img {
   display: block;
   max-width: 100%;
-  padding-top: 10px;
+  padding-top: 5px;
   width: 400px;
 }
 @media only screen and (max-width: 992px) {
@@ -840,7 +840,7 @@ nav ul li img.show {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: 50px;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1200px) {
   .page-count {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -877,7 +877,7 @@ nav ul li img.show {
           align-items: center;
 }
 .page-count ul li {
-  margin: 0 10px;
+  margin: 0 15px;
   position: relative;
   z-index: 1;
   font-size: 1.08rem;
@@ -893,7 +893,7 @@ nav ul li img.show {
   content: "";
   height: 20px;
   width: 20px;
-  background-color: #c0b59d;
+  background-color: #a39684;
   display: block;
   position: absolute;
   top: 4px;
@@ -918,6 +918,16 @@ nav ul li img.show {
 .page-count a img {
   margin: 0 10px;
   width: 25px;
+}
+@media only screen and (max-width: 1200px) {
+  .hide-m {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .show-m {
+    display: none !important;
+  }
 }
 main {
   max-width: 1600px;
@@ -991,16 +1001,6 @@ main .box .main-section__heading p {
   font-weight: 800;
   color: #111;
   margin-bottom: 0;
-}
-@media only screen and (max-width: 992px) {
-  .hide-m {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .show-m {
-    display: none !important;
-  }
 }
 .footer {
   display: block;
@@ -1107,9 +1107,6 @@ main .box .main-section__heading p {
   }
 }
 .contacts .contact .contact__image {
-  width: 50%;
-  max-width: 200px;
-  padding: 0 50px 0;
   margin: 0 auto;
 }
 .contacts .contact .contact__image img {
