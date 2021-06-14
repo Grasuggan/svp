@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Partners>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    var partners = Model.Children<Partner>();
+}
+
+
+<div class="main-section__heading">
+    <h1>@Model.Name</h1>
+</div>
+
+@* TODO Two partners per line *@
+<div class="partners">
+    @foreach (var partner in partners)
+    {
+        <div class="partner">
+            <div class="partner__image">
+                <img src="@partner.Logo.MediaItem.Url()" alt=""/>
+            </div>
+            <div class="partner__text">
+                <p>@partner.Description</p>
+                <div class="button-container">
+                    <a href="@partner.Url()" class="button">Läs mer</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@* TODO Implement pagination  *@
+@* <div class="page-count"> *@
+@*     <a href="/" class="prev"> *@
+@*         <img src="assets/img/arrow-left.svg"/> *@
+@*         <span> *@
+@*             Föregående sida *@
+@*         </span> *@
+@*     </a> *@
+@* *@
+@*     <ul class="hide-m"> *@
+@*         <li><a href="">1</a></li> *@
+@*         <li class="selected"><a href="">2</a></li> *@
+@*         <li><a href="">3</a></li> *@
+@*         <li><a href="">4</a></li> *@
+@*     </ul> *@
+@* *@
+@* *@
+@*     <a href="/" class="next"> *@
+@*         <span>Nästa sida</span> *@
+@*         <img src="assets/img/arrow-right.svg"/> *@
+@*     </a> *@
+@* </div> *@
+@* <div class="page-count show-m"> *@
+@*     <ul> *@
+@*         <li><a href="">1</a></li> *@
+@*         <li class="selected"><a href="">2</a></li> *@
+@*         <li><a href="">3</a></li> *@
+@*         <li><a href="">4</a></li> *@
+@*     </ul> *@
+@* </div> *@

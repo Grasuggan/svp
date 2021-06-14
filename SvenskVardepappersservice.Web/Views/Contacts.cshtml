@@ -1,0 +1,99 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Contacts>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    var contacts = Model.Children<Contact>();
+}
+
+
+<div class="main-section__heading">
+    <h1>@Model.Name</h1>
+</div>
+
+@* TODO 3 contacts on each row *@
+<div class="contacts">
+    @foreach (var contact in contacts)
+    {
+        <div class="contact">
+            <div class="contact__image">
+                
+                
+                @if (contact.Image != null)
+                {
+                    <img src="@contact.Image.MediaItem.Url()" alt="@contact.Name"/>
+                }
+                else
+                {
+                    <img src="/assets/Icons/contact.svg" alt="Bild saknas"/>
+                }
+            </div>
+            <div class="contact__title">
+                <h2>@contact.Name</h2>
+                <p>@contact.Role</p>
+            </div>
+            <div class="contact__info">
+                <div class="contact__info-row">
+                    <img src="/assets/Icons/phone-toolbar.svg"/>
+                    <span> Gruppnummer: </span>
+                    <a href="phone:@contact.GroupNumber">@contact.GroupNumber</a>
+                </div>
+                <div class="contact__info-row">
+                    <img src="/assets/Icons/phone-toolbar.svg"/>
+                    <span> Direktnummer: </span>
+                    <a href="phone:@contact.DirectNumber">@contact.DirectNumber</a>
+                </div>
+                <div class="contact__info-row">
+                    <img src="/assets/Icons/mail.svg"/>
+                    <a href="mailto:@contact.Email">@contact.Email</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@* TODO implement pagination *@
+@* <div class="page-count"> *@
+@*     <a href="/" class="prev"> *@
+@*         <img src="/assets/Icons/ctrl-left.svg"/> *@
+@*         <span> *@
+@*             Föregående sida *@
+@*         </span> *@
+@*     </a> *@
+@* *@
+@*     <ul class="hide-m"> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* *@
+@* *@
+@*     <a href="/" class="next"> *@
+@*         <span>Nästa sida</span> *@
+@*         <img src="/assets/Icons/ctrl-right.svg"/> *@
+@*     </a> *@
+@* </div> *@
+@* <div class="page-count show-m"> *@
+@*     <ul> *@
+@*         <li> *@
+@*             <a href="">1</a> *@
+@*         </li> *@
+@*         <li class="selected"> *@
+@*             <a href="">2</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">3</a> *@
+@*         </li> *@
+@*         <li> *@
+@*             <a href="">4</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* </div> *@

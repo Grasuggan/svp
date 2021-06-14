@@ -1,0 +1,7 @@
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: transparent;
+  -webkit-box-shadow: 0 22px 43px -20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 22px 43px -20px rgba(0, 0, 0, 0.15);
+}
