@@ -177,7 +177,7 @@ h2 {
 .pre-head {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
-  color: #c0b59d;
+  color: #a39685;
   font-weight: 800;
   font-size: 0.91rem;
   line-height: 1;
@@ -400,6 +400,7 @@ a.button:hover {
   opacity: 0;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
+  font-weight: 800;
 }
 @media only screen and (max-width: 992px) {
   .file-container .info-popup {
