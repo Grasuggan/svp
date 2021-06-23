@@ -16,6 +16,7 @@ main {
     box-shadow: 0 10px 60px 20px rgba(0, 0, 0, 0.15);
     background-color: white;
     display: flex;
+    border-radius: 5px;
 
     @media @m {
       flex-flow: column;
@@ -52,17 +53,6 @@ main {
         }
       }
     }
-  }
-}
-
-.hide-m {
-  @media @m {
-    display: none !important;
-  }
-}
-.show-m {
-  @media only screen and (min-width: 1200px) {
-    display: none !important;
   }
 }
 
