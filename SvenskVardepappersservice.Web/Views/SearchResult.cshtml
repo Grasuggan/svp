@@ -1,0 +1,65 @@
+﻿@inherits UmbracoViewPage<IPublishedContent>
+@using Igloo.Extensions
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    var q = Request["search"] ?? "";
+    // var searchPageAmount = Model.SettingsValue<int>("searchPageAmount", 8);	//var searchTerm = Request["sokord"].Trim() ?? "";
+    // var documentPages = Model.Root().Children<Documents>();
+    // var documents = documentPages.SelectMany(documentPage => documentPage.Children<Document>()).Where(x => x.Description.ToLower().Contains(searchTerm) || x.Name.ToLower().Contains(searchTerm) || x.UploadFile.ToLower().Contains(searchTerm)).ToList();
+}
+
+
+<div class="main-section__heading">
+    <h1>@Model.Name</h1>
+    @* <p>Sida 1/3</p> *@
+</div>
+
+
+<div class="searchresult">
+    <section class="block gray-bg search-results">
+        @* <div class="search-result-info"> *@
+        @*     Din sokning <strong class="query">"@(q)"</strong> gav <strong class="search-results-count"></strong> <strong>resultat</strong> *@
+        @* </div> *@
+        <div class="container container--small">
+            <div class="row">
+                <div class="col-100">
+                    <template>
+                        <div class="list-container files search-result">
+                            <div class="list-container__content">
+                                @* Date *@
+                                <div class="pre-head"></div>
+                                @* Name *@
+                                <h2></h2>
+                                @* Description *@
+                                <p></p>
+                            </div>
+                            @* Url *@
+                            <a href="" class="file-container">
+                                @* Link to image of doctype *@
+                                <img src="" alt="">
+                                @* Uploaded file name *@
+                                <div class="info-popup"></div>
+                            </a>
+                        </div>
+                    </template>
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <div class="search-empty">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <h5>No Results Found</h5>
+        </div>
+        <div class="container container--small search-pagination-container" style="display: none">
+            <div class="row">
+                <div class="col-100">
+                    <button class="button button--block button--dark">Load More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = null;
+    var q = Request["search"] ?? "";
     var children = Model.Root().Children();
+    var searchPageUrl = Model.Root().Children<Umbraco.Web.PublishedModels.SearchResult>().First().Url();
 }
 
 @* the fun starts here *@
@@ -24,12 +26,13 @@
         <div class="header-logo">
             <img src="/assets/Logo.png" alt=""/>
         </div>
-        <form class="search">
-            <!-- <input type="text" placeholder="Sök"/> -->
-            <input type="text" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
-            <img src="/assets/search.svg" alt=""/>
-        </form>
-
+        <section class="block search-block gray-bg">
+            <form action="@searchPageUrl" class="search__form search">
+                @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
+                <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
+                <img src="/assets/search.svg" />
+            </form>
+        </section>
     </div>
 </header>
 <main>
@@ -51,18 +54,21 @@
                 </li>
                 @foreach (var child in children)
                 {
-                    selected = child == Model || child == Model.Parent ? "selected" : "";
-                    <li class="@selected">
-                        @{ var url = child.Url() ?? ""; }
-                        <a href="@url">
+                    if (child.GetType() != typeof(Umbraco.Web.PublishedModels.SearchResult))
+                    {
+                        selected = child == Model || child == Model.Parent ? "selected" : "";
+                        <li class="@selected">
+                            @{ var url = child.Url() ?? ""; }
+                            <a href="@url">
 
-                            @{
-                                var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
-                                var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
-                            }
-                            <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
-                        </a>
-                    </li>
+                                @{
+                                    var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
+                                    var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
+                                }
+                                <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
+                            </a>
+                        </li>
+                    }
                 }
             </ul>
         </nav>
@@ -83,5 +89,12 @@
     <div class="footer"></div>
 
 </main>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/scripts/app.js"></script>
+<script type="text/javascript">
+function search() {
+window.location = "/sokresultat";
+}
+</script>
+
 </body>
