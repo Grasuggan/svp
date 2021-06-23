@@ -43,5 +43,33 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// App Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("appIcon")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent AppIcon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("appIcon");
+
+		///<summary>
+		/// Favicon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("favicon")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent Favicon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("favicon");
+
+		///<summary>
+		/// Meta Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("metaDescription")]
+		public virtual string MetaDescription => this.Value<string>("metaDescription");
+
+		///<summary>
+		/// Meta Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("metaTitle")]
+		public virtual string MetaTitle => this.Value<string>("metaTitle");
 	}
 }

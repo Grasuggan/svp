@@ -4,6 +4,10 @@
     var q = Request["search"] ?? "";
     var children = Model.Root().Children();
     var searchPageUrl = Model.Root().Children<Umbraco.Web.PublishedModels.SearchResult>().First().Url();
+    var site = Model.Root() as HomePage;
+    var favicon = site.Favicon != null ? site.Favicon : null;
+    var appicon = site.AppIcon != null ? site.AppIcon : null;
+   
 }
 
 @* the fun starts here *@
@@ -12,11 +16,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svensk Vardepappersservice</title>
+    <title>@site.MetaTitle</title>
+    <meta name="description" content="@(site.MetaDescription)">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
+
+    @if (appicon != null)
+    {
+        <link rel="apple-touch-icon" sizes="57x57" href="@appicon.GetCropUrl(57, 57)">
+        <link rel="apple-touch-icon" sizes="60x60" href="@appicon.GetCropUrl(60, 60)">
+        <link rel="apple-touch-icon" sizes="72x72" href="@appicon.GetCropUrl(72, 72)">
+        <link rel="apple-touch-icon" sizes="76x76" href="@appicon.GetCropUrl(76, 76)">
+        <link rel="apple-touch-icon" sizes="114x114" href="@appicon.GetCropUrl(114, 114)">
+        <link rel="apple-touch-icon" sizes="120x120" href="@appicon.GetCropUrl(120, 120)">
+        <link rel="apple-touch-icon" sizes="144x144" href="@appicon.GetCropUrl(144, 144)">
+        <link rel="apple-touch-icon" sizes="152x152" href="@appicon.GetCropUrl(152, 152)">
+        <link rel="apple-touch-icon" sizes="180x180" href="@appicon.GetCropUrl(180, 180)">
+    }
+    @if (favicon != null)
+    {
+        <link rel="icon" type="image/png" sizes="192x192" href="@favicon.GetCropUrl(192, 192)">
+        <link rel="icon" type="image/png" sizes="32x32" href="@favicon.GetCropUrl(32, 32)">
+        <link rel="icon" type="image/png" sizes="96x96" href="@favicon.GetCropUrl(96, 96)">
+        <link rel="icon" type="image/png" sizes="16x16" href="@favicon.GetCropUrl(16, 16)">
+        <meta name="msapplication-TileImage" content="@favicon.GetCropUrl(144, 144)">
+    }
 </head>
 <body>
 <header>
