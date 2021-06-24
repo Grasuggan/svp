@@ -45,18 +45,18 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// App Icon
+		/// App Icon: Select a square .png image with background color. 180px x 180px for best result
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("appIcon")]
-		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent AppIcon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("appIcon");
+		public virtual global::Umbraco.Core.Models.MediaWithCrops AppIcon => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("appIcon");
 
 		///<summary>
-		/// Favicon
+		/// Favicon: Select a square .png image. 192px x 192px for best result
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("favicon")]
-		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent Favicon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("favicon");
+		public virtual global::Umbraco.Core.Models.MediaWithCrops Favicon => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("favicon");
 
 		///<summary>
 		/// Meta Description
@@ -66,7 +66,7 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string MetaDescription => this.Value<string>("metaDescription");
 
 		///<summary>
-		/// Meta Title
+		/// Meta Title: Name of the site
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("metaTitle")]
