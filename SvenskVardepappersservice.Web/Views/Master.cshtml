@@ -22,13 +22,11 @@
         <div class="header-logo">
             <img src="/assets/Logo.png" alt=""/>
         </div>
-        <section class="block search-block gray-bg">
-            <form action="@searchPageUrl" class="search__form search">
+            <form action="@searchPageUrl" class="search">
                 @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
                 <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
                 <img src="/assets/search.svg"/>
             </form>
-        </section>
     </div>
 </header>
 <main>
@@ -68,15 +66,8 @@
                 }
             </ul>
         </nav>
-        <!-- <nav>
-            <ul>
-                <li><a href="/svenskvardepappersservice/index.html"><img src="assets/Icons/view-white.svg" /><span>Översikt</span></a></li>
-                <li><a href="/svenskvardepappersservice/news.html"><img src="assets/Icons/paper.svg" /><span>Nyhetsarkiv</span></a></li>
-                <li class="selected"><a href="/svenskvardepappersservice/documents.html"><img src="assets/Icons/open-folder.svg" /><span>Dokument</span></a></li>
-                <li><a href="/svenskvardepappersservice/partners.html"><img src="assets/Icons/privacy-policy.svg" /><span>Samarbetsparners</span></a></li>
-                <li><a href="/svenskvardepappersservice/contact.html"><img src="assets/Icons/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
-            </ul>
-        </nav> -->
+      
+        </nav> 
         <div class="main-section">
             @RenderBody()
         </div>

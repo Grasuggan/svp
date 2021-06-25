@@ -37,13 +37,25 @@
                     var src = "/assets/Icons/file-" + suffix + ".svg";
                     <img src="@src" alt=""/>
                 }
-                else if (fileUrl == "")
+                else if (suffix == "txt" || suffix == "odt" || suffix.Contains("doc"))
                 {
                     
+                    <img src="/assets/Icons/file-doc.svg" alt=""/>
+                }
+                 else if (suffix.Contains("xl"))
+                {
+                    
+                    <img src="/assets/Icons/file-xlsx.svg" alt=""/>
+                }
+                 else if (suffix.Contains("pp") || suffix.Contains("tif") || suffix.Contains("odp") )
+                {
+                    
+                    <img src="/assets/Icons/file-xlsx.svg" alt=""/>
                 }
                 else
                 {
-                    <img src="/assets/Icons/paper-2.svg" alt=""/>
+                  
+                    <img src="/assets/Icons/file-pdf.svg" alt=""/>
                 }
                 <div class="info-popup">
                     @fileName

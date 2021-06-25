@@ -1,11 +1,8 @@
 .partners {
   display: flex;
+  flex-wrap: wrap;
   &:last-child {
     margin-bottom: 200px;
-  }
-
-  @media @m {
-    flex-wrap: wrap;
   }
 
   .partner {
@@ -17,7 +14,7 @@
     padding: 30px;
     text-align: center;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 
     @media @m {
       width: 100%;
