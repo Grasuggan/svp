@@ -24,7 +24,7 @@ mobileNav.addEventListener("click", function (e) {
         //Preform search on input change
         searchInput.addEventListener("input", function (e) {
             doFullSearch(searchInput.value, 1);
-            document.querySelector(".query").innerHTML = '"' + searchInput.value + '"';
+            // document.querySelector(".query").innerHTML = '"' + searchInput.value + '"';
         });
         //pager
         pager.addEventListener("click", function (e) {
@@ -39,6 +39,7 @@ function doFullSearch(query, page) {
     // var resultLabelCount = document.querySelector(".search-results-count");
     // var resultLabelQuery = document.querySelector(".search-result-info strong.query");
     var searchEmpty = document.querySelector(".search-empty");
+    var searchShort = document.querySelector(".search-short");
     var pager = document.querySelector(".search-pagination-container");
     var amountPerPageElement = document.querySelector(".search-pagination-amount");
     var amountPerPage = 10 // parseInt(amountPerPageElement.value);
@@ -57,14 +58,22 @@ function doFullSearch(query, page) {
         // resultLabelCount.textContent = '"' + query + '"';
         // resultLabelCount.textContent = response.data.ResultCount;
         // No results
-        if (response.data.ResultCount == 0) {
+        if (response.data.ResultCount === 0 && query.length < 3) {
+            searchEmpty.style.display = 'none';
+            searchShort.style.display = 'block';
+            document.querySelectorAll('.search-result, .search-result-container').forEach(function (e) { return e.remove(); });
+            pager.style.display = 'none';
+        }
+        else if (response.data.ResultCount === 0) {
             searchEmpty.style.display = 'block';
+            searchShort.style.display = 'none';
             document.querySelectorAll('.search-result, .search-result-container').forEach(function (e) { return e.remove(); });
             pager.style.display = 'none';
         }
         else {
             searchEmpty.style.display = 'none';
-            if (page == 1) {
+            searchShort.style.display = 'none';
+            if (page === 1) {
                 document.querySelectorAll('.search-result, .search-result-container').forEach(function (e) { return e.remove(); });
             }
             var template = document.querySelector(".search-results template");
