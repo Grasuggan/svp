@@ -15,7 +15,7 @@ mobileNav.addEventListener("click", function (e) {
   #Full Search
 ======================================*/
 (function () {
-    var searchInput = document.querySelector(".search-block .search__form .search__input");
+    var searchInput = document.querySelector(".search__input");
     var searchresult = document.querySelector(".searchresult"); //searchresults
     var pager = document.querySelector(".search-pagination-container button");
     if (searchInput && searchresult) {
