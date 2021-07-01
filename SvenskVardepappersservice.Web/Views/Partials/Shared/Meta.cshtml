@@ -1,19 +1,22 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-    var site = Model.Root() as HomePage;
-    
-    var favicon = site?.Favicon?.MediaItem;
-    var appicon = site?.AppIcon?.MediaItem;
+    var site = Model.Root();
+
+    var favicon = site.Value<IPublishedContent>("favicon");
+    var appicon = site.Value<IPublishedContent>("appIcon");
+
+    var metaTitle = site.Value("metaTitle", "");
+    var metaDescription = site.Value("metaDescription", "");
 
 }
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@site.MetaTitle</title>
-<meta name="description" content="@(site.MetaDescription)">
-<meta property="og:title" content="@(site.MetaTitle)"/>
+<title>@metaTitle</title>
+<meta name="description" content="@(metaDescription)">
+<meta property="og:title" content="@metaTitle"/>
 <meta property="og:type" content="website"/>
-<meta property="og:description" content="@(site.MetaDescription)"/>
+<meta property="og:description" content="@(metaDescription)"/>
 <meta property="og:url" content="@(Model.Url(mode: UrlMode.Absolute))">
 
 
