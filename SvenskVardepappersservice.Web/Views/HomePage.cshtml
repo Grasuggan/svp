@@ -4,10 +4,10 @@
     Layout = "Master.cshtml";
     // TODO Select which articles to be displayed
     var news = Model
-        .Children<News>()
-        .First()
         .Children<NewsArticle>()
         .OrderByDescending(x => x.CreateDate);
+
+
 }
 
 <div class="main-section__heading">

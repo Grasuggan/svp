@@ -24,7 +24,7 @@
         <div class="pre-head">
             @Model.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: Model.CreateDate).ToString("d MMMM yyyy")
         </div>
-        <h1> Översikt </h1>
+        <h1>@Model.Heading</h1>
         @Model.Text
     </div>
 </div>
