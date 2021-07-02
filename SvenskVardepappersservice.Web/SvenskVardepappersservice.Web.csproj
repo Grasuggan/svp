@@ -462,6 +462,7 @@
     <Content Include="bin\HtmlAgilityPack.xml" />
     <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
     <Content Include="bin\Igloo.Core.dll" />
+    <Content Include="bin\Igloo.WebApi.dll" />
     <Content Include="bin\ImageProcessor.dll" />
     <Content Include="bin\ImageProcessor.Web.dll" />
     <Content Include="bin\ImageProcessor.Web.xml" />
