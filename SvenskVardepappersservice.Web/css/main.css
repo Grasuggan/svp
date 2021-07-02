@@ -1182,3 +1182,6 @@ main .box .main-section__heading p {
 .overview__content .pre-head {
   margin-bottom: 2.5em;
 }
+.search__autocomplete {
+    max-height: calc(100vh - var(--header-height));
+}

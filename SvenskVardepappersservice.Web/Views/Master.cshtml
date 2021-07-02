@@ -5,6 +5,7 @@
     var children = Model.Root().Children();
     var searchPageUrl = Model.Root().Children<Umbraco.Web.PublishedModels.SearchResult>().First().Url();
     var currentPage = Umbraco.AssignedContentItem;
+    var site = Model.Root();
 
    
 }
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="/css/main.css">
     @Html.Partial($"Shared/Meta")
 </head>
-<body>
+<body data-siteid="@site.Id" data-culture="@System.Threading.Thread.CurrentThread.CurrentCulture.Name">
 <header>
 
     @{ const string bgUrl = "/assets/bg.svg"; }
@@ -26,11 +27,23 @@
         <div class="header-logo">
             <img src="/assets/Logo.png" alt=""/>
         </div>
-            <form action="@searchPageUrl" class="search">
-                @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
-                <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
-                <img src="/assets/search.svg"/>
-            </form>
+        <form action="@searchPageUrl" class="search">
+            @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
+            <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
+            <img src="/assets/search.svg" />
+
+
+            <div class="search__autocomplete hide">
+
+                <div class="search__no-results hide">
+                    @Umbraco.GetDictionaryValue("No Results Found")
+                </div>
+
+                <ul class="search__suggest">
+                </ul>
+               
+            </div>
+        </form>
     </div>
 </header>
 <main>

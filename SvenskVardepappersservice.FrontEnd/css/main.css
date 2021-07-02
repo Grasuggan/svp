@@ -830,6 +830,9 @@ nav ul li img.show {
     display: block;
   }
 }
+.search__autocomplete {
+  max-height: calc(100vh - var(--header-height));
+}
 .page-count {
   display: -webkit-box;
   display: -ms-flexbox;
