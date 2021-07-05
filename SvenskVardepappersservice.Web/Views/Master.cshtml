@@ -9,97 +9,98 @@
 
    
 }
-
 @* the fun starts here *@
-
-<head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-    @Html.Partial($"Shared/Meta")
-</head>
-<body data-siteid="@site.Id" data-culture="@System.Threading.Thread.CurrentThread.CurrentCulture.Name">
-<header>
-
-    @{ const string bgUrl = "/assets/bg.svg"; }
-    <div class="header-bg lazyloaded" style="background-image:url(@bgUrl)"></div>
-    <div class="header-inner">
-        <div class="header-logo">
-            <img src="/assets/Logo.png" alt=""/>
-        </div>
-        <form action="@searchPageUrl" class="search">
-            @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
-            <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
-            <img src="/assets/search.svg" />
-
-
-            <div class="search__autocomplete hide">
-
-                <div class="search__no-results hide">
-                    @Umbraco.GetDictionaryValue("No Results Found")
-                </div>
-
-                <ul class="search__suggest">
-                </ul>
-               
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/main.css">
+        @Html.Partial($"Shared/Meta")
+    </head>
+    <body data-siteid="@site.Id" data-culture="@System.Threading.Thread.CurrentThread.CurrentCulture.Name">
+    <header>
+    
+        @{ const string bgUrl = "/assets/bg.svg"; }
+        <div class="header-bg lazyloaded" style="background-image:url(@bgUrl)"></div>
+        <div class="header-inner">
+            <div class="header-logo">
+                <img src="/assets/Logo.png" alt=""/>
             </div>
-        </form>
-    </div>
-</header>
-<main>
-    <div class="box">
-        <a class="mobile-nav">
-            <button class="hamburger" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </a>
-        <nav>
-            <ul>
-                @{ var selected = Model == Model.Root() || (currentPage.GetType() == typeof(Umbraco.Web.PublishedModels.NewsArticle) && currentPage.Parent<Umbraco.Web.PublishedModels.HomePage>() == Model.Root()) ? "selected" : ""; }
-                
-                <li class="@selected">
-                    <a href="/">
-                        <img class="show" src="/assets/Icons/view.svg" alt=""/><img class="show-hover" src="/assets/Icons/view-white.svg" alt=""/><span>@Model.Root().Name</span>
-                    </a>
-                </li>
-                @foreach (var child in children)
-                {
-                    if (child.GetType() != typeof(Umbraco.Web.PublishedModels.SearchResult) && 
-                    child.GetType() != typeof(Umbraco.Web.PublishedModels.NewsArticle))
-                    {
-                        selected = child == Model || child == Model.Parent ? "selected" : "";
-                       
-                        <li class="@selected">
-                            @{ var url = child.Url() ?? ""; }
-                            <a href="@url">
-
-                                @{
-                                    var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
-                                    var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
-                                }
-                                <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
-                            </a>
-                        </li>
-                    }
-                }
-            </ul>
-        </nav>
-        <div class="main-section">
-            @RenderBody()
+            <form action="@searchPageUrl" class="search">
+                @* <input type="hidden" name="amount" class="search-pagination-amount" value="8" /> *@
+                <input type="text" value="@(q)" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
+                <img src="/assets/search.svg" />
+    
+    
+                <div class="search__autocomplete hide">
+    
+                    <div class="search__no-results hide">
+                        @Umbraco.GetDictionaryValue("No Results Found")
+                    </div>
+    
+                    <ul class="search__suggest">
+                    </ul>
+                   
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="footer"></div>
-
-</main>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/scripts/app.js"></script>
-<script type="text/javascript">
-function search() {
-window.location = "/sokresultat";
-}
-</script>
-
-</body>
+    </header>
+    <main>
+        <div class="box">
+            <a class="mobile-nav">
+                <button class="hamburger" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </a>
+            <nav>
+                <ul>
+                    @{ var selected = Model == Model.Root() || (currentPage.GetType() == typeof(Umbraco.Web.PublishedModels.NewsArticle) && currentPage.Parent<Umbraco.Web.PublishedModels.HomePage>() == Model.Root()) ? "selected" : ""; }
+                    
+                    <li class="@selected">
+                        <a href="/">
+                            <img class="show" src="/assets/Icons/view.svg" alt=""/><img class="show-hover" src="/assets/Icons/view-white.svg" alt=""/><span>@Model.Root().Name</span>
+                        </a>
+                    </li>
+                    @foreach (var child in children)
+                    {
+                        if (child.GetType() != typeof(Umbraco.Web.PublishedModels.SearchResult) && 
+                        child.GetType() != typeof(Umbraco.Web.PublishedModels.NewsArticle))
+                        {
+                            selected = child == Model || child == Model.Parent ? "selected" : "";
+                           
+                            <li class="@selected">
+                                @{ var url = child.Url() ?? ""; }
+                                <a href="@url">
+    
+                                    @{
+                                        var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
+                                        var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
+                                    }
+                                    <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </nav>
+            <div class="main-section">
+                @RenderBody()
+            </div>
+        </div>
+    
+        <div class="footer"></div>
+    
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script type="text/javascript">
+    function search() {
+    window.location = "/sokresultat";
+    }
+    </script>
+    
+    </body>
+</html>
