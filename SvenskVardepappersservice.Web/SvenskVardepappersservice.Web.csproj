@@ -482,9 +482,9 @@
     <Content Include="Config\ClientDependency.config" />
     <Content Include="Config\HealthChecks.config" />
     <Content Include="Config\Igloo.config" />
-    <None Include="config\imageprocessor\cache.config" />
-    <None Include="config\imageprocessor\processing.config" />
-    <None Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\security.config" />
     <Content Include="Config\serilog.config" />
     <Content Include="Config\serilog.user.config" />
     <Content Include="Config\tinyMceConfig.config" />
