@@ -325,11 +325,12 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings\Constants.cs" />
+    <Compile Include="Controllers\ExternalLoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Models\ExternalLoginRequest.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj">
       <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
