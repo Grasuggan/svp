@@ -325,10 +325,11 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Composer.cs" />
     <Compile Include="Settings\Constants.cs" />
-    <Compile Include="Controllers\ExternalLoginController.cs" />
+    <Compile Include="Features\ExternalLoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Models\ExternalLoginRequest.cs" />
+    <Compile Include="Features\Models\ExternalLoginRequest.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
