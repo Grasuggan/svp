@@ -536,8 +536,10 @@
     <None Include="uSync\v8\ContentTypes\document.config" />
     <None Include="uSync\v8\ContentTypes\documents.config" />
     <None Include="uSync\v8\ContentTypes\homepage.config" />
+    <Content Include="uSync\v8\ContentTypes\login.config" />
     <None Include="uSync\v8\ContentTypes\news.config" />
     <None Include="uSync\v8\ContentTypes\newsarticle.config" />
+    <Content Include="uSync\v8\ContentTypes\overviewarticles.config" />
     <None Include="uSync\v8\ContentTypes\partner.config" />
     <None Include="uSync\v8\ContentTypes\partners.config" />
     <None Include="uSync\v8\ContentTypes\searchresult.config" />
@@ -561,6 +563,7 @@
     <None Include="uSync\v8\DataTypes\HomeContentGridLayout.config" />
     <None Include="uSync\v8\DataTypes\HomeFontRadioButtonList.config" />
     <None Include="uSync\v8\DataTypes\HomeLogoMediaPicker.config" />
+    <Content Include="uSync\v8\DataTypes\HomePageMetaDescriptionTextarea.config" />
     <None Include="uSync\v8\DataTypes\ImageCropper.config" />
     <None Include="uSync\v8\DataTypes\ImageMediaPicker.config" />
     <None Include="uSync\v8\DataTypes\LabelBigint.config" />
@@ -572,6 +575,7 @@
     <None Include="uSync\v8\DataTypes\ListViewContent.config" />
     <None Include="uSync\v8\DataTypes\ListViewMedia.config" />
     <None Include="uSync\v8\DataTypes\ListViewMembers.config" />
+    <Content Include="uSync\v8\DataTypes\MediaPicker.config" />
     <None Include="uSync\v8\DataTypes\MediaPickerFile.config" />
     <None Include="uSync\v8\DataTypes\MemberPicker.config" />
     <None Include="uSync\v8\DataTypes\MultipleImageMediaPicker.config" />
@@ -616,6 +620,7 @@
     <None Include="uSync\v8\Templates\document.config" />
     <None Include="uSync\v8\Templates\documents.config" />
     <None Include="uSync\v8\Templates\homepage.config" />
+    <Content Include="uSync\v8\Templates\login.config" />
     <None Include="uSync\v8\Templates\master.config" />
     <None Include="uSync\v8\Templates\news.config" />
     <None Include="uSync\v8\Templates\newsarticle.config" />
