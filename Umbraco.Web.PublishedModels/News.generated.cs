@@ -59,6 +59,20 @@ namespace Umbraco.Web.PublishedModels
 		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent Favicon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("favicon");
 
 		///<summary>
+		/// Hide From Search
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("hideFromSearch")]
+		public virtual bool HideFromSearch => this.Value<bool>("hideFromSearch");
+
+		///<summary>
+		/// Items per page: 6 as default
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("itemsPerPage")]
+		public virtual int ItemsPerPage => this.Value<int>("itemsPerPage");
+
+		///<summary>
 		/// Meta Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
@@ -71,5 +85,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("metaTitle")]
 		public virtual string MetaTitle => this.Value<string>("metaTitle");
+
+		///<summary>
+		/// Hide From Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public virtual bool UmbracoNaviHide => this.Value<bool>("umbracoNaviHide");
 	}
 }

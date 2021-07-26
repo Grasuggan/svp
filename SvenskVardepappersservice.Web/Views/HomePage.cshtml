@@ -1,90 +1,103 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Web.PublishedModels;
+@using System.Globalization
 @{
     Layout = "Master.cshtml";
     // TODO Select which articles to be displayed
-    var news = Model
-        .Children<NewsArticle>()
-        .OrderByDescending(x => x.CreateDate);
+    var news = Model.ListItems.Where(x => x.IsVisible())
+                .OrderBy(x => x.CreateDate).ToList();
 
 
+    var page = 1;
+    var requestQuery = Request["page"];
+    if (requestQuery != null)
+    {
+        page = int.Parse(requestQuery);
+    }
+
+    int takePerPage = Model.ItemsPerPage != 0 ? Model.ItemsPerPage : 6;
+    var numberOfPagesDecimal = Convert.ToDecimal(news.Count) / takePerPage;
+    var numberOfPagesInt = int.Parse(Math.Ceiling(numberOfPagesDecimal).ToString(CultureInfo.InvariantCulture));
+
+    var pagesToSkip = takePerPage * (page - 1);
+    news = news.Skip(pagesToSkip).Take(takePerPage).ToList();
 }
 
 <div class="main-section__heading">
     <h1>@Model.Name</h1>
-    @* <p>Sida 1/3</p> *@
+    @if (numberOfPagesInt > 1)
+    {
+        <p>@Umbraco.GetDictionaryValue("site") @page/@numberOfPagesInt</p>
+    }
 </div>
 
-@foreach (var article in news)
+@foreach (ContentModels.NewsArticle article in news)
 {
-    <div class="list-container list-spacing">
-        <div class="list-container__img">
-            <img src="/assets/img/paper.png"/>
-        </div>
-        <div class="list-container__content col-85">
-            <div class="pre-head">
-                @article.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: article.CreateDate).ToString("d MMMM yyyy")
+    if (article.IsVisible())
+    {
+        <div class="list-container list-spacing">
+            <div class="list-container__img">
+                <img src="/assets/img/paper.png" />
             </div>
-            <h2>
-                @article.Value("heading", fallback: Fallback.ToDefaultValue, defaultValue: article.Name)
-            </h2>
-            <p>
-                @article.Summary
-            </p>
+            <div class="list-container__content col-85">
+                <div class="pre-head">
+                    @article.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: article.CreateDate).ToString("d MMMM yyyy")
+                </div>
+                <h2>
+                    @article.Value("heading", fallback: Fallback.ToDefaultValue, defaultValue: article.Name)
+                </h2>
+                <p>
+                    @article.Summary
+                </p>
 
-            @if (!article.Url().IsNullOrWhiteSpace())
-            {
-                <a href="@article.Url()" class="button">Läs mer</a>
-            }
+                @if (!article.Url().IsNullOrWhiteSpace())
+                {
+                    <a href="@article.Url()" class="button">@Umbraco.GetDictionaryValue("Read more")</a>
+                }
+            </div>
         </div>
-    </div>
+    }
 }
 
-@* TODO Implement pagination *@
-@* <div class="page-count"> *@
-@*     <a href="/" class="prev"> *@
-@*         <img src="assets/Icons/ctrl-left.svg"/> *@
-@*         <span> *@
-@*             Föregående sida *@
-@*         </span> *@
-@*     </a> *@
-@* *@
-@*     <ul class="hide-m"> *@
-@*         <li> *@
-@*             <a href="">1</a> *@
-@*         </li> *@
-@*         <li class="selected"> *@
-@*             <a href="">2</a> *@
-@*         </li> *@
-@*         <li> *@
-@*             <a href="">3</a> *@
-@*         </li> *@
-@*         <li> *@
-@*             <a href="">4</a> *@
-@*         </li> *@
-@*     </ul> *@
-@* *@
-@* *@
-@*     <a href="/" class="next"> *@
-@*         <span>Nästa sida</span> *@
-@*         <img src="assets/Icons/ctrl-right.svg"/> *@
-@*     </a> *@
-@* *@
-@* *@
-@* </div> *@
-@* <div class="page-count show-m"> *@
-@*     <ul> *@
-@*         <li> *@
-@*             <a href="">1</a> *@
-@*         </li> *@
-@*         <li class="selected"> *@
-@*             <a href="">2</a> *@
-@*         </li> *@
-@*         <li> *@
-@*             <a href="">3</a> *@
-@*         </li> *@
-@*         <li> *@
-@*             <a href="">4</a> *@
-@*         </li> *@
-@*     </ul> *@
-@* </div> *@
+
+
+@if (numberOfPagesInt > 1)
+{
+<div class="page-count">
+
+    <a href="@(Model.Url)?page=@(page-1)" class="prev @(page == 1 ? "invisible" : "")">
+        <img src="/assets/Icons/ctrl-left.svg" />
+        <span>
+           @Umbraco.GetDictionaryValue("previous")
+        </span>
+    </a>
+
+    <ul class="hide-m">
+        @for (var i = 1; i <= numberOfPagesInt; i++)
+        {
+            <li class="@(i == page ? "selected" : "")">
+                <a title="Go to page @i" href="@(Model.Url)?page=@i">@i</a>
+            </li>
+        }
+    </ul>
+
+   
+        <a href="@(Model.Url)?page=@(page+1)" class="next @(page == numberOfPagesInt ? "invisible" : "")">
+            <span> @Umbraco.GetDictionaryValue("next")</span>
+            <img src="/assets/Icons/ctrl-right.svg" />
+        </a>
+    
+    </div>
+
+     <div class="page-count show-m"> 
+         <ul>
+             @for (var i = 1; i <= numberOfPagesInt; i++)
+             {
+                 <li class="@(i == page ? "selected" : "")">
+                     <a title="Go to page @i" href="@(Model.Url)?page=@i">@i</a>
+                 </li>
+             }
+         </ul> 
+     </div> 
+
+}

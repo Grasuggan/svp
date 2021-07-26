@@ -59,6 +59,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Description => this.Value<string>("description");
 
 		///<summary>
+		/// Tooltip
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("tooltip")]
+		public virtual string Tooltip => this.Value<string>("tooltip");
+
+		///<summary>
 		/// Upload File
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]

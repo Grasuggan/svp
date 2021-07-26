@@ -59,6 +59,20 @@ namespace Umbraco.Web.PublishedModels
 		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent Favicon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("favicon");
 
 		///<summary>
+		/// Items per page: 6 as default
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("itemsPerPage")]
+		public virtual int ItemsPerPage => this.Value<int>("itemsPerPage");
+
+		///<summary>
+		/// List items
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("listItems")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> ListItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("listItems");
+
+		///<summary>
 		/// Meta Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
