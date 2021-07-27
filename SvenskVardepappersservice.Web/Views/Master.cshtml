@@ -2,12 +2,13 @@
 @{
     Layout = null;
     var q = Request["search"] ?? "";
+    var overv = Request["overview"] ?? "";
     var children = Model.Root().Children().Where(x => x.IsVisible());
     var searchPageUrl = Model.Root().Children<Umbraco.Web.PublishedModels.SearchResult>().First().Url();
     var currentPage = Umbraco.AssignedContentItem;
     var site = Model.Root();
 
-   
+
 }
 @* the fun starts here *@
 <!DOCTYPE html>
@@ -57,7 +58,7 @@
             </a>
             <nav>
                 <ul>
-                    @{ var selected = Model == Model.Root() || (currentPage.GetType() == typeof(Umbraco.Web.PublishedModels.NewsArticle) && currentPage.Parent<Umbraco.Web.PublishedModels.HomePage>() == Model.Root()) ? "selected" : ""; }
+                    @{ var selected = Model == Model.Root() || overv != "" || (currentPage.GetType() == typeof(Umbraco.Web.PublishedModels.NewsArticle) && currentPage.Parent<Umbraco.Web.PublishedModels.HomePage>() == Model.Root())  ? "selected" : ""; }
                     
                     <li class="@selected">
                         <a href="/">
@@ -69,7 +70,7 @@
                         if (child.GetType() != typeof(Umbraco.Web.PublishedModels.SearchResult) && 
                         child.GetType() != typeof(Umbraco.Web.PublishedModels.NewsArticle))
                         {
-                            selected = child == Model || child == Model.Parent ? "selected" : "";
+                            selected = (child == Model || child == Model.Parent) && overv == "" ? "selected" : "";
                            
                             <li class="@selected">
                                 @{ var url = child.Url() ?? ""; }
@@ -84,6 +85,7 @@
                                 </a>
                             </li>
                         }
+                       
                     }
                 </ul>
             </nav>

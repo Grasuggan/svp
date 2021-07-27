@@ -33,8 +33,7 @@
 
 @foreach (ContentModels.NewsArticle article in news)
 {
-    if (article.IsVisible())
-    {
+    
         <div class="list-container list-spacing">
             <div class="list-container__img">
                 <img src="/assets/img/paper.png" />
@@ -52,11 +51,11 @@
 
                 @if (!article.Url().IsNullOrWhiteSpace())
                 {
-                    <a href="@article.Url()" class="button">@Umbraco.GetDictionaryValue("Read more")</a>
+                    <a href="@(article.Url())?overview=v" class="button">@Umbraco.GetDictionaryValue("Read more")</a>
                 }
             </div>
         </div>
-    }
+    
 }
 
 

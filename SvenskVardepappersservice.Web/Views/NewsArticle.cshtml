@@ -3,14 +3,26 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
+    var q = Request["overview"] ?? "";
 }
 
 @* TODO Where should this redirect? *@
 <div class="main-section__heading">
-    <a href="@Model.Parent.Url()" class="main-section__back">
-        <img src="/assets/Icons/ctrl-left.svg" alt="">
-        <h1>@Model.Parent.Name</h1>
-    </a>
+    @if (q != "")
+    {
+        <a href="@Model.Root().Url" class="main-section__back">
+            <img src="/assets/Icons/ctrl-left.svg" alt="">
+            <h1>@Model.Root().Name</h1>
+        </a>
+    }
+    else
+    {
+        <a href="@Model.Parent.Url()" class="main-section__back">
+            <img src="/assets/Icons/ctrl-left.svg" alt="">
+            <h1>@Model.Parent.Name</h1>
+        </a>
+    }
+
 </div>
 
 <div class="overview">
