@@ -15,20 +15,19 @@ namespace SvenskVardepappersservice.Core.Controllers
 {
     public class SearchResult
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Url { get; set; }
-        public string Description { get; set; }
-        public string CreateDate { get; set; }
-        public string FileName { get; set; }
-        public string FileType { get; set; }
-    }
 
+        //public string Description { get; set; }
+        //public string CreateDate { get; set; }
+        //public string FileName { get; set; }
+        //public string FileType { get; set; }
+    }
     public class SearchResponse
     {
         public List<SearchResult> Result { get; set; }
         public long ResultCount { get; set; }
     }
-
     public class SearchController : UmbracoApiController
     {
         ILocalizationService _localizationService = null;
@@ -39,22 +38,29 @@ namespace SvenskVardepappersservice.Core.Controllers
             _localizationService = localizationService;
             _settings = new IglooConfig().Settings;
         }
-
         [HttpGet]
-        public SearchResponse GetSearch(string query, int amount, int page)
+        public SearchResponse GetSearch(string query, int amount, int page, int siteId, string culture)
         {
-            var culture = "";
             var searchResults = new SearchResponse() { Result = new List<SearchResult>(), ResultCount = 0 };
+            var site = Umbraco.Content(siteId);
             if (!ExamineManager.Instance.TryGetIndex(Constants.UmbracoIndexes.ExternalIndexName, out var index) || !(index is IUmbracoIndex umbIndex))
                 throw new InvalidOperationException($"The required index {Constants.UmbracoIndexes.ExternalIndexName} was not found");
 
-            var documentTypeAliases = new[] { "document" };
-            var fieldAliases = new[] {"uploadFile", "name", "description"};
+            var documentTypeAliases = GetDocumentTypeAliases();
+            var fieldAliases = GetFieldAliases();
 
-            var fields = new string[]{};
+            // Get all index fields suffixed with the culture name supplied (culture variant), 
+            // or fields that don't have a suffix (culture invariant).
+            //var cultureAndInvariantFields = umbIndex.GetCultureAndInvariantFields(culture).ToArray();
+            if (_localizationService.GetAllLanguages().Count() == 1)
+            {
+                culture = string.Empty;
+            }
+            var fields = new string[] { };
 
-            foreach (var fieldAlias in fieldAliases) {
-                var alias = string.IsNullOrEmpty(culture) ? fieldAlias : fieldAlias+"_" + culture.ToLower();
+            foreach (var fieldAlias in fieldAliases)
+            {
+                var alias = string.IsNullOrEmpty(culture) ? fieldAlias : fieldAlias + "_" + culture.ToLower();
                 fields = fields.Append(alias).ToArray();
             }
 
@@ -73,21 +79,41 @@ namespace SvenskVardepappersservice.Core.Controllers
                 .And().Field(isPublished, "y")
                 // Only these content types
                 .And().GroupedOr(new[] { "__NodeTypeAlias" }, documentTypeAliases);
+            if (site != null)
+            {
+                examineQuery = examineQuery
+                    .And().GroupedOr(new[] { "__Path" }, $"{site.Path},*".MultipleCharacterWildcard(), $"{site.Path}".Escape());
+            }
             examineQuery = examineQuery
                 // Exclude anything hidden from search, NOT filters must come last!
                 .Not().Field("hideFromSearch", "1");
             var skip = (page - 1) * amount;
             var take = amount;
-     
+
             var results = Umbraco.ContentQuery.Search(examineQuery, skip, take, out long totalRecords);
             searchResults.ResultCount = totalRecords;
             foreach (var result in results)
             {
                 var node = result.Content;
-                var fileUrl = node.Value<string>("UploadFile");
-                searchResults.Result.Add(new SearchResult() { Name = node.Name, Url = fileUrl, CreateDate =  node.CreateDate.ToString("d MMMM yyyy", new System.Globalization.CultureInfo("sv-SE")), FileType = node.UrlSegment, Description = node.Value<string>("Description"), FileName = fileUrl.Substring(fileUrl.LastIndexOf('/') + 1)});
+                searchResults.Result.Add(new SearchResult() { Title = node.Name(culture), Url = node.Url(culture)});
             }
             return searchResults;
+        }
+
+        private string[] GetDocumentTypeAliases()
+        {
+            var documentTypeAliasesSettings = _settings.Search.DocumentTypes;
+            var arrayOfdocumentTypeAliases = Array.ConvertAll(documentTypeAliasesSettings.Split(','), p => p.Trim());
+
+            return arrayOfdocumentTypeAliases;
+        }
+
+        private string[] GetFieldAliases()
+        {
+            var fieldsAliasesSettings = _settings.Search.Fields;
+            var arrayOfFieldsAliases = Array.ConvertAll(fieldsAliasesSettings.Split(','), p => p.Trim());
+
+            return arrayOfFieldsAliases;
         }
     }
 }

@@ -9,63 +9,40 @@
     // var documents = documentPages.SelectMany(documentPage => documentPage.Children<Document>()).Where(x => x.Description.ToLower().Contains(searchTerm) || x.Name.ToLower().Contains(searchTerm) || x.UploadFile.ToLower().Contains(searchTerm)).ToList();
 }
 
-
-<div class="main-section__heading">
-    <h1>@Model.Name</h1>
-    @* <p>Sida 1/3</p> *@
-</div>
-
-
-<div class="searchresult">
-    <section class="block gray-bg search-results">
-        @* <div class="search-result-info"> *@
-        @*     Din sokning <strong class="query">"@(q)"</strong> gav <strong class="search-results-count"></strong> <strong>resultat</strong> *@
-        @* </div> *@
+<section class="block search-block gray-bg">
+    <div class="search-result-info">
+        Din sökning <strong class="query">"@(q)"</strong> gav <strong class="search-results-count"></strong> <strong class="search-results-count-label single">resultat</strong> <strong class="search-results-count-label multi">resultat</strong>
+    </div>
+</section>
+<section class="block gray-bg search-results">
+ 
         <div class="container container--small">
             <div class="row">
                 <div class="col-100">
                     <template>
-                        <div class="list-container files search-result">
-                            <div class="list-container__content">
-                                @* Date *@
-                                <div class="pre-head"></div>
-                                @* Name *@
-                                <h2></h2>
-                                @* Description *@
-                                <p></p>
-                            </div>
-                            @* Url *@
-                            <a href="" class="file-container">
-                                @* Link to image of doctype *@
-                                <img src="" alt="">
-                                @* Uploaded file name *@
-                                <div class="info-popup"></div>
-                            </a>
-                        </div>
+                        <article class="search-result">
+                            <h3 class="h5"><a href=""></a></h3>
+                            <p></p>
+                        </article>
                     </template>
-                    
 
                 </div>
             </div>
-        </div>
 
-        <div class="search-empty">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <br />
-            <h5> Your search yielded no result/s/</h5>
-        </div>        
-        <div class="search-short">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <br/>
-            <h5> The searchterm is too short</h5>
         </div>
-        <div class="container container--small search-pagination-container" style="display: none">
-            <div class="row">
-                <div class="col-100">
-                    <button class="button button--block button--dark">Load More</button>
-                </div>
+    
+
+    <div class="search-empty">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <h5>@Umbraco.GetDictionaryValue("No Results Found") Inga resultat</h5>
+    </div>
+
+    <div class="container container--small search-pagination-container">
+        <div class="row">
+            <div class="col-100">
+                <button class="button button--block button--dark">@Umbraco.GetDictionaryValue("Load More")</button>
             </div>
         </div>
-    </section>
+    </div>
 
-</div>
+</section>
