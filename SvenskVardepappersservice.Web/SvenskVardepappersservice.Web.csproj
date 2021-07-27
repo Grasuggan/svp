@@ -585,6 +585,8 @@
     <None Include="uSync\v8\DataTypes\Numeric.config" />
     <None Include="uSync\v8\DataTypes\ObsoleteMediaPicker.config" />
     <None Include="uSync\v8\DataTypes\ObsoleteMultipleMediaPicker.config" />
+    <Content Include="uSync\v8\DataTypes\OverviewItemsPerPageNumeric.config" />
+    <Content Include="uSync\v8\DataTypes\OverviewMultinodeTreepicker.config" />
     <None Include="uSync\v8\DataTypes\PeopleFeaturedPeopleMultinodeTreepicker.config" />
     <None Include="uSync\v8\DataTypes\PersonDepartmentTags.config" />
     <None Include="uSync\v8\DataTypes\PersonPhotoMediaPicker.config" />
