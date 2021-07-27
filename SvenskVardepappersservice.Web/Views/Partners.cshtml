@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
-    var partners = Model.Children<Partner>();
+    var partners = Model.Children<Partner>().Where(x => x.IsVisible());
 }
 
 

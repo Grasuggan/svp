@@ -59,11 +59,25 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Description => this.Value<string>("description");
 
 		///<summary>
+		/// Hide From Search
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("hideFromSearch")]
+		public virtual bool HideFromSearch => this.Value<bool>("hideFromSearch");
+
+		///<summary>
 		/// Tooltip
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("tooltip")]
 		public virtual string Tooltip => this.Value<string>("tooltip");
+
+		///<summary>
+		/// Hide From Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public virtual bool UmbracoNaviHide => this.Value<bool>("umbracoNaviHide");
 
 		///<summary>
 		/// Upload File

@@ -3,7 +3,7 @@
 @using System.Globalization
 @{
     Layout = "Master.cshtml";
-    var news = Model.Children<NewsArticle>().OrderByDescending(x => x.Date).ToList();
+    var news = Model.Children<NewsArticle>().Where(x => x.IsVisible()).OrderByDescending(x => x.Date).ToList();
 
     var page = 1;
     var requestQuery = Request["page"];

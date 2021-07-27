@@ -4,7 +4,7 @@
 @using System.Globalization
 @{
     Layout = "Master.cshtml";
-    var documents = Model.Children<Document>().ToList();
+    var documents = Model.Children<Document>().Where(x => x.IsVisible()).ToList();
 
     var page = 1;
     var requestQuery = Request["page"];

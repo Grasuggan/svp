@@ -52,6 +52,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Description => this.Value<string>("description");
 
 		///<summary>
+		/// Hide From Search
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("hideFromSearch")]
+		public virtual bool HideFromSearch => this.Value<bool>("hideFromSearch");
+
+		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
@@ -64,5 +71,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("text")]
 		public virtual global::System.Web.IHtmlString Text => this.Value<global::System.Web.IHtmlString>("text");
+
+		///<summary>
+		/// Hide From Navigation
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public virtual bool UmbracoNaviHide => this.Value<bool>("umbracoNaviHide");
 	}
 }

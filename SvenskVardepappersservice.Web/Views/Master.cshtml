@@ -2,7 +2,7 @@
 @{
     Layout = null;
     var q = Request["search"] ?? "";
-    var children = Model.Root().Children();
+    var children = Model.Root().Children().Where(x => x.IsVisible());
     var searchPageUrl = Model.Root().Children<Umbraco.Web.PublishedModels.SearchResult>().First().Url();
     var currentPage = Umbraco.AssignedContentItem;
     var site = Model.Root();
@@ -78,6 +78,7 @@
                                     @{
                                         var srcBlack = "/assets/Icons/" + child.ContentType.Alias + ".svg";
                                         var srcWhite = "/assets/Icons/" + child.ContentType.Alias + "-white.svg";
+                                        
                                     }
                                     <img class="show" src="@srcBlack" alt=""/><img class="show-hover" src="@srcWhite" alt=""/><span>@child.Name</span>
                                 </a>
