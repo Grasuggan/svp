@@ -1,59 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <RootNamespace>Umbraco.Web.PublishedModels</RootNamespace>
-        <AssemblyName>Umbraco.Web.PublishedModels</AssemblyName>
-        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug</OutputPath>
-        <DefineConstants>DEBUG;</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="NUnit" Version="2.6.4" />
-        <PackageReference Include="Umbraco.ModelsBuilder" Version="8.1.6" />
-        <PackageReference Include="UmbracoCms.Web" Version="8.14.0" />
-        <PackageReference Include="Xamarin.UITest" Version="2.2.4" />
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="AppTests.cs" />
-        <Compile Include="AppInitializer.cs" />
-        <Compile Include="Article.generated.cs" />
-        <Compile Include="Audio.generated.cs" />
-        <Compile Include="Contact.generated.cs" />
-        <Compile Include="Contacts.generated.cs" />
-        <Compile Include="Document.generated.cs" />
-        <Compile Include="Documents.generated.cs" />
-        <Compile Include="File.generated.cs" />
-        <Compile Include="Folder.generated.cs" />
-        <Compile Include="HomePage.generated.cs" />
-        <Compile Include="Image.generated.cs" />
-        <Compile Include="Member.generated.cs" />
-        <Compile Include="News.generated.cs" />
-        <Compile Include="NewsArticle.generated.cs" />
-        <Compile Include="Partner.generated.cs" />
-        <Compile Include="Partners.generated.cs" />
-        <Compile Include="SearchResult.generated.cs" />
-        <Compile Include="VectorGraphics.generated.cs" />
-        <Compile Include="Video.generated.cs" />
-    </ItemGroup>
-    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8C03BD7-F6F1-4F15-AEC3-C9988F8DA67A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Umbraco.Web.PublishedModels</RootNamespace>
+    <AssemblyName>Umbraco.Web.PublishedModels</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="2.6.4" />
+    <PackageReference Include="Umbraco.ModelsBuilder" Version="8.1.6" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.14.0" />
+    <PackageReference Include="Xamarin.UITest" Version="2.2.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppTests.cs" />
+    <Compile Include="AppInitializer.cs" />
+    <Compile Include="Article.generated.cs" />
+    <Compile Include="Audio.generated.cs" />
+    <Compile Include="Contact.generated.cs" />
+    <Compile Include="Contacts.generated.cs" />
+    <Compile Include="Document.generated.cs" />
+    <Compile Include="Documents.generated.cs" />
+    <Compile Include="File.generated.cs" />
+    <Compile Include="Folder.generated.cs" />
+    <Compile Include="HomePage.generated.cs" />
+    <Compile Include="Image.generated.cs" />
+    <Compile Include="Login.generated.cs" />
+    <Compile Include="Member.generated.cs" />
+    <Compile Include="News.generated.cs" />
+    <Compile Include="NewsArticle.generated.cs" />
+    <Compile Include="Partner.generated.cs" />
+    <Compile Include="Partners.generated.cs" />
+    <Compile Include="SearchResult.generated.cs" />
+    <Compile Include="VectorGraphics.generated.cs" />
+    <Compile Include="Video.generated.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
