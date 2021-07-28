@@ -476,6 +476,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="lib\Igloo.Core.dll" />
+    <Content Include="lib\Igloo.WebApi.dll" />
+    <Content Include="lib\SvenskVardepappersservice.Core.dll" />
     <Content Include="Robots.txt" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
