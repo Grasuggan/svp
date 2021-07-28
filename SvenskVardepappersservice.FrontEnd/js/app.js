@@ -170,23 +170,21 @@ function doFullSearch(query, page) {
             btn.className = "button-container";
             var linkToSite = document.createElement("a");
 
-            //if (response.data.Result[i].Alias == "contact") {
+            if (response.data.Result[i].Alias == "contact") {
+              var url = response.data.Result[i].Url;
+              var urlS = url.toString().split("/");
+              var lastWord = urlS[urlS.length - 2];
+              var newPath = url.substring(0, url.lastIndexOf(lastWord));
 
-            //    var path = "";
-            //    var url = response.data.Result[i].Url;
-            //    var newPath = url.join('../');
-            //    var newPath = path;
-            //    linkToSite.setAttribute("href", newPath);
-            //    listInnerContainer.setAttribute("href", newPath);
-
-            //}
-            //else {
-            linkToSite.setAttribute("href", response.data.Result[i].Url);
-            listInnerContainer.setAttribute(
-              "href",
-              response.data.Result[i].Url
-            );
-            /*}*/
+              linkToSite.setAttribute("href", newPath);
+              listInnerContainer.setAttribute("href", newPath);
+            } else {
+              linkToSite.setAttribute("href", response.data.Result[i].Url);
+              listInnerContainer.setAttribute(
+                "href",
+                response.data.Result[i].Url
+              );
+            }
 
             var linkToSiteImg = document.createElement("img");
             linkToSiteImg.setAttribute("src", "/assets/Icons/ctrl-right.svg");
