@@ -68,6 +68,10 @@
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Igloo.Core, Version=2.4.2.32720, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Igloo.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Igloo.WebApi">
       <HintPath>..\lib\Igloo.WebApi.dll</HintPath>
     </Reference>
@@ -220,6 +224,10 @@
     <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7">
       <HintPath>..\packages\Superpower.2.0.0\lib\net45\Superpower.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="SvenskVardepappersservice.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\SvenskVardepappersservice.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -655,10 +663,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SvenskVardepappersservice.Core\SvenskVardepappersservice.Core.csproj">
-      <Project>{7bbc124b-ec04-451c-aff8-92d125a9017e}</Project>
-      <Name>SvenskVardepappersservice.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj">
       <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
       <Name>Umbraco.Web.PublishedModels</Name>
