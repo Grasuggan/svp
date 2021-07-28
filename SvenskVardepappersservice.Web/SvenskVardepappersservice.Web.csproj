@@ -476,9 +476,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="lib\Igloo.Core.dll" />
-    <Content Include="lib\Igloo.WebApi.dll" />
-    <Content Include="lib\SvenskVardepappersservice.Core.dll" />
     <Content Include="Robots.txt" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -666,6 +663,9 @@
       <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
       <Name>Umbraco.Web.PublishedModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
