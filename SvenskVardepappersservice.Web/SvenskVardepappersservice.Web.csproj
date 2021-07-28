@@ -647,6 +647,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -661,12 +662,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj">
-      <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
-      <Name>Umbraco.Web.PublishedModels</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
