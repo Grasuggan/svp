@@ -207,6 +207,10 @@ p {
     margin-bottom: 0.5em;
 }
 
+strong {
+    font-weight: 800;
+}
+
 img {
     max-width: 100%;
     color: #35444f;
@@ -1372,4 +1376,23 @@ main .box .main-section__heading p {
 .overview__content h1 {
     font-size: 2.5rem;
     margin-bottom: 1em;
+}
+
+.overview__content .pre-head {
+    margin-bottom: 2.5em;
+}
+
+.search-result-info {
+    font-size: 1.16rem;
+}
+
+.search-result h3 a {
+    font-size: 1.33rem;
+    font-weight: 600;
+    color: #35444f;
+    margin-bottom: 0.5em;
+}
+
+a.list-container__content p {
+    color: #444;
 }

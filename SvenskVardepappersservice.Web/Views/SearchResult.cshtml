@@ -4,40 +4,42 @@
 @{
     Layout = "Master.cshtml";
     var q = Request["search"] ?? "";
+    
     // var searchPageAmount = Model.SettingsValue<int>("searchPageAmount", 8);	//var searchTerm = Request["sokord"].Trim() ?? "";
     // var documentPages = Model.Root().Children<Documents>();
     // var documents = documentPages.SelectMany(documentPage => documentPage.Children<Document>()).Where(x => x.Description.ToLower().Contains(searchTerm) || x.Name.ToLower().Contains(searchTerm) || x.UploadFile.ToLower().Contains(searchTerm)).ToList();
 }
 
-<section class="block search-block gray-bg">
+
+
+<section class="block search-block gray-bg main-section__heading">
     <div class="search-result-info">
         Din sökning <strong class="query">"@(q)"</strong> gav <strong class="search-results-count"></strong> <strong class="search-results-count-label single">resultat</strong> <strong class="search-results-count-label multi">resultat</strong>
     </div>
 </section>
 <section class="block gray-bg search-results">
  
-        <div class="container container--small">
-            <div class="row">
-                <div class="col-100">
+        
                     <template>
-                        <article class="search-result">
-                            <h3 class="h5"><a href=""></a></h3>
-                            <p></p>
+                        <article class="search-result list-container">
+                            <a href="">
+                                <h3 class="h5">
+                                </h3>
+                                <p></p>
+                                <img />
+                            </a>
                         </article>
                     </template>
+                   
 
-                </div>
-            </div>
-
-        </div>
     
 
-    <div class="search-empty">
+    <div class="search-empty list-container">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <h5>@Umbraco.GetDictionaryValue("No Results Found") Inga resultat</h5>
+        <h5>@Umbraco.GetDictionaryValue("No Results Found")</h5>
     </div>
 
-    <div class="container container--small search-pagination-container">
+    <div class="container container--small search-pagination-container list-container">
         <div class="row">
             <div class="col-100">
                 <button class="button button--block button--dark">@Umbraco.GetDictionaryValue("Load More")</button>

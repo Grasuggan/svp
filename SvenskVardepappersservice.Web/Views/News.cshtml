@@ -28,11 +28,11 @@
 </div>
 @foreach (var article in news)
 {
-    <div class="list-container list-spacing">
+    <div class="list-container">
         <div class="list-container__img">
             <img src="/assets/img/paper.png" alt="" />
         </div>
-        <div class="list-container__content col-85">
+        <div class="list-container__content col-65">
             <div class="pre-head">
                 @article.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: article.CreateDate).ToString("d MMMM yyyy")
             </div>
@@ -42,13 +42,17 @@
             <p>
                 @article.Summary
             </p>
-
-            @if (!article.Url().IsNullOrWhiteSpace())
-            {
-                <a href="@article.Url()" class="button">Läs mer</a>
-            }
         </div>
-    </div>
+            <div class="button-container">
+                @if (!article.Url().IsNullOrWhiteSpace())
+                {
+
+                    <a href="@article.Url()" class="button">Läs mer</a>
+                }
+                </div>
+         
+        </div>
+
 }
 
 @if (numberOfPagesInt > 1)

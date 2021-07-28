@@ -52,13 +52,6 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Description => this.Value<string>("description");
 
 		///<summary>
-		/// Hide From Search
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("hideFromSearch")]
-		public virtual bool HideFromSearch => this.Value<bool>("hideFromSearch");
-
-		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]

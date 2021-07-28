@@ -17,7 +17,29 @@ namespace SvenskVardepappersservice.Core.Controllers
     {
         public string Title { get; set; }
         public string Url { get; set; }
+        public string Alias { get; set; }
 
+        public string ImageUrl { get; set; }
+
+        public string UploadFile { get; set; }
+
+        public string Date { get; set; }
+
+        public string Summary { get; set; }
+
+        public string MetaDescription { get; set; }
+
+        public string MetaTitle { get; set; }
+
+        public string Description { get; set; }
+
+        public string Role { get; set; }
+
+        public string DirectNumber { get; set; }
+
+        public string GroupNumber { get; set; }
+
+        public string Email { get; set; }
         //public string Description { get; set; }
         //public string CreateDate { get; set; }
         //public string FileName { get; set; }
@@ -87,15 +109,31 @@ namespace SvenskVardepappersservice.Core.Controllers
             examineQuery = examineQuery
                 // Exclude anything hidden from search, NOT filters must come last!
                 .Not().Field("hideFromSearch", "1");
-            var skip = (page - 1) * amount;
-            var take = amount;
+            //var skip = (page - 1) * amount;
+            //var take = amount;
+            var skip = 0;
+            var take = 10;
 
             var results = Umbraco.ContentQuery.Search(examineQuery, skip, take, out long totalRecords);
             searchResults.ResultCount = totalRecords;
             foreach (var result in results)
             {
                 var node = result.Content;
-                searchResults.Result.Add(new SearchResult() { Title = node.Name(culture), Url = node.Url(culture)});
+                searchResults.Result.Add(new SearchResult() { 
+                    Summary = node.Value<string>("summary", ""), 
+                    MetaDescription = node.Value<string>("metaDescription", ""),
+                    MetaTitle = node.Value<string>("metaTitle", ""),
+                    Description = node.Value<string>("description", ""),
+                    Role = node.Value<string>("role", ""),
+                    DirectNumber = node.Value<string>("directNumber", ""),
+                    GroupNumber = node.Value<string>("groupNumber", ""),
+                    Email = node.Value<string>("email", ""),
+                    Title = node.Name(culture), 
+                    Url = node.Url(culture), 
+                    Alias = node.ContentType.Alias, 
+                    Date = node.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: node.CreateDate).ToString("d MMMM yyyy"), 
+                    ImageUrl = node.Value<IPublishedContent>("image")?.Url, UploadFile = node.Value<string>("uploadFile", "") 
+                });
             }
             return searchResults;
         }
