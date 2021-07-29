@@ -68,11 +68,11 @@
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Igloo.Core, Version=2.4.2.32720, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Igloo.Core">
       <HintPath>..\lib\Igloo.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Igloo.WebApi">
+    <Reference Include="Igloo.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Igloo.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, PublicKeyToken=null">
@@ -665,6 +665,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Umbraco.Web.PublishedModels\Umbraco.Web.PublishedModels.csproj">
+      <Project>{e8c03bd7-f6f1-4f15-aec3-c9988f8da67a}</Project>
+      <Name>Umbraco.Web.PublishedModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
