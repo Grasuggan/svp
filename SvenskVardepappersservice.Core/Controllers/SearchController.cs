@@ -112,7 +112,7 @@ namespace SvenskVardepappersservice.Core.Controllers
             //var skip = (page - 1) * amount;
             //var take = amount;
             var skip = 0;
-            var take = 10;
+            var take = 100;
 
             var results = Umbraco.ContentQuery.Search(examineQuery, skip, take, out long totalRecords);
             searchResults.ResultCount = totalRecords;

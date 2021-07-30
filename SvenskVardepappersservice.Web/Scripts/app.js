@@ -21,7 +21,7 @@ var body = document.body;
     var pager = document.querySelector(".search-pagination-container button");
     if (searchInput) {
         //Preform search on page load
-        doFullSearch(searchInput.value, 1);
+        doFullSearch(searchInput.value, 0);
         //Preform search on input change
         searchInput.addEventListener("input", function (e) {
             doFullSearch(searchInput.value, 1);
@@ -42,7 +42,7 @@ function doFullSearch(query, page) {
     var searchEmpty = document.querySelector(".search-empty");
     var pager = document.querySelector(".search-pagination-container");
     /*var amountPerPageElement = document.querySelector(".search-pagination-amount");*/
-    var amountPerPage = 10;
+    var amountPerPage = 100;
     
     axios({
         url: "/Umbraco/Api/Search/GetSearch?Query=" + query + "&Amount=" + amountPerPage + "&Page=" + page + "&SiteId=" + body.dataset.siteid + "&Culture=" + body.dataset.culture + "&ExtendedModel=true",
