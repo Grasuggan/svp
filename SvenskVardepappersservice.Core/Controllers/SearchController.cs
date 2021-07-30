@@ -40,6 +40,10 @@ namespace SvenskVardepappersservice.Core.Controllers
         public string GroupNumber { get; set; }
 
         public string Email { get; set; }
+
+        public bool Hide { get; set; }
+
+        public bool HiddenParent { get; set; }
         //public string Description { get; set; }
         //public string CreateDate { get; set; }
         //public string FileName { get; set; }
@@ -119,8 +123,10 @@ namespace SvenskVardepappersservice.Core.Controllers
             foreach (var result in results)
             {
                 var node = result.Content;
-                searchResults.Result.Add(new SearchResult() { 
-                    Summary = node.Value<string>("summary", ""), 
+                searchResults.Result.Add(new SearchResult() {
+                    HiddenParent = node.Parent != null ? node.Parent.Value<bool>("umbracoNaviHide") : false,
+                    Hide = node.Value<bool>("umbracoNaviHide"),
+                    Summary = node.Value<string>("summary", ""),
                     MetaDescription = node.Value<string>("metaDescription", ""),
                     MetaTitle = node.Value<string>("metaTitle", ""),
                     Description = node.Value<string>("description", ""),
@@ -128,11 +134,11 @@ namespace SvenskVardepappersservice.Core.Controllers
                     DirectNumber = node.Value<string>("directNumber", ""),
                     GroupNumber = node.Value<string>("groupNumber", ""),
                     Email = node.Value<string>("email", ""),
-                    Title = node.Name(culture), 
-                    Url = node.Url(culture), 
-                    Alias = node.ContentType.Alias, 
-                    Date = node.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: node.CreateDate).ToString("d MMMM yyyy"), 
-                    ImageUrl = node.Value<IPublishedContent>("image")?.Url, UploadFile = node.Value<string>("uploadFile", "") 
+                    Title = node.Name(culture),
+                    Url = node.Url(culture),
+                    Alias = node.ContentType.Alias,
+                    Date = node.Value("Date", fallback: Fallback.ToDefaultValue, defaultValue: node.CreateDate).ToString("d MMMM yyyy"),
+                    ImageUrl = node.Value<IPublishedContent>("image")?.Url, UploadFile = node.Value<string>("uploadFile", "")
                 });
             }
             return searchResults;
