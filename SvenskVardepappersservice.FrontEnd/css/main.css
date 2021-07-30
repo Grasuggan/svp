@@ -249,6 +249,7 @@ a.button:hover {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    width: 60%;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -1220,5 +1221,6 @@ a.list-container__content p {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    margin-top: 20px;
   }
 }

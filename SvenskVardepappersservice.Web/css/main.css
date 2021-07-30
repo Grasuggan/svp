@@ -273,6 +273,7 @@ a.button {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        width: 60%;
     }
 }
 
@@ -1404,6 +1405,9 @@ a.list-container__content p {
 
     .search-result .button-container {
         width: 100%;
-        justify-content: flex-end
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        margin-top: 20px;
     }
 }
