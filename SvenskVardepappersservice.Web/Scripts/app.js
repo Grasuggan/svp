@@ -45,7 +45,7 @@ function doFullSearch(query, page) {
     var amountPerPage = 10;
     
     axios({
-        url: "/Umbraco/Api/IglooSearch/Search?Query=" + query + "&Amount=" + amountPerPage + "&Page=" + page + "&SiteId=" + body.dataset.siteid + "&Culture=" + body.dataset.culture + "&ExtendedModel=true",
+        url: "/Umbraco/Api/Search/GetSearch?Query=" + query + "&Amount=" + amountPerPage + "&Page=" + page + "&SiteId=" + body.dataset.siteid + "&Culture=" + body.dataset.culture + "&ExtendedModel=true",
         method: "GET"
     }).then(function (response) {
         if (response.data.ResultCount == 1) {
