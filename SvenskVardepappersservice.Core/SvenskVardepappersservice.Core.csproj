@@ -325,11 +325,12 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Composer.cs" />
+    <Compile Include="Features\ExternalLogin\Composer.cs" />
+    <Compile Include="Features\Search\OverrideIndex.cs" />
     <Compile Include="Settings\Constants.cs" />
-    <Compile Include="Features\ExternalLoginController.cs" />
+    <Compile Include="Features\ExternalLogin\ExternalLoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Features\Models\ExternalLoginRequest.cs" />
+    <Compile Include="Features\ExternalLogin\Models\ExternalLoginRequest.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

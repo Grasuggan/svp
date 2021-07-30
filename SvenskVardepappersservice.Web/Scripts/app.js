@@ -21,10 +21,10 @@ var body = document.body;
     var pager = document.querySelector(".search-pagination-container button");
     if (searchInput) {
         //Preform search on page load
-        doFullSearch(searchInput.value, 10);
+        doFullSearch(searchInput.value, 1);
         //Preform search on input change
         searchInput.addEventListener("input", function (e) {
-            doFullSearch(searchInput.value, 10);
+            doFullSearch(searchInput.value, 1);
             document.querySelector(".query").innerHTML = '"' + searchInput.value + '"';
         });
         //pager
@@ -45,7 +45,7 @@ function doFullSearch(query, page) {
     var amountPerPage = 10;
     
     axios({
-        url: "/Umbraco/Api/Search/GetSearch?Query=" + query + "&Amount=" + amountPerPage + "&Page=" + page + "&SiteId=" + body.dataset.siteid + "&Culture=" + body.dataset.culture + "&ExtendedModel=true",
+        url: "/Umbraco/Api/IglooSearch/Search?Query=" + query + "&Amount=" + amountPerPage + "&Page=" + page + "&SiteId=" + body.dataset.siteid + "&Culture=" + body.dataset.culture + "&ExtendedModel=true",
         method: "GET"
     }).then(function (response) {
         if (response.data.ResultCount == 1) {
