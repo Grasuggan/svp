@@ -1264,7 +1264,7 @@
                     orderDirection: 'Ascending',
                     orderBy: 'SortOrder',
                     orderBySystemField: true,
-                    cultureName: ''
+                    cultureName: 'en-US'
                 };
                 if (options === undefined) {
                     options = {};
@@ -1273,6 +1273,9 @@
                 angular.extend(defaults, options);
                 //now copy back to the options we will use
                 options = defaults;
+                if (options.cultureName == null) {
+                    options.cultureName = 'en-US';
+                }
                 //change asc/desct
                 if (options.orderDirection === 'asc') {
                     options.orderDirection = 'Ascending';
