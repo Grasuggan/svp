@@ -1210,7 +1210,7 @@ main .box .main-section__heading p {
   margin-bottom: 0.5em;
 }
 .search-result .list-container__content {
-  border-top: none;
+  border-top: none !important;
 }
 .search-result.list-container.files + .list-container {
   border-top-color: rgba(0, 0, 0, 0.05);
