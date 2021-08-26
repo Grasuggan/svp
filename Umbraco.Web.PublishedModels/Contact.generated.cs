@@ -45,7 +45,7 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Direct number: Phone number to the contact
+		/// Telefon: Phone number to the contact
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("directNumber")]
@@ -57,13 +57,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("email")]
 		public virtual string Email => this.Value<string>("email");
-
-		///<summary>
-		/// Group number: Phone number to the group
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("groupNumber")]
-		public virtual string GroupNumber => this.Value<string>("groupNumber");
 
 		///<summary>
 		/// Image

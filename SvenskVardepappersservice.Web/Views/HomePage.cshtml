@@ -4,8 +4,7 @@
 @{
     Layout = "Master.cshtml";
     // TODO Select which articles to be displayed
-    var news = Model.ListItems.Where(x => x.IsVisible())
-                .OrderBy(x => x.CreateDate).ToList();
+    var news = Model.ListItems.Where(x => x.IsVisible()).ToList();
 
 
     var page = 1;

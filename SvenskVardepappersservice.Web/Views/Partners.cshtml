@@ -15,9 +15,12 @@
     @foreach (var partner in partners)
     {
         <div class="partner">
+            @if (@partner.Logo != null)
+            {
             <div class="partner__image">
                 <img src="@partner.Logo.MediaItem.Url()" alt=""/>
             </div>
+            }
             <div class="partner__text">
                 <p>@partner.Description</p>
                 <div class="button-container">
