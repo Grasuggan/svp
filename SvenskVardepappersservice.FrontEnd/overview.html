@@ -1,97 +1,141 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SVP - Front-end</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-    <div class="header-bg lazyloaded" style="background-image:url(./assets/bg.svg)"></div>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div
+      class="header-bg lazyloaded"
+      style="background-image: url(./assets/bg.svg)"
+    ></div>
     <header>
-      
-        <div class="header-inner">
+      <div class="header-inner">
         <div class="header-logo">
-            <img src="assets/Logo.png" />
+          <img src="assets/Logo.png" />
         </div>
         <form class="search">
-            <!-- <input type="text" placeholder="Sök"/> -->
-            <input type="text" autocomplete="off" name="search" id="page-search-input" required="" class="search__input" placeholder="Search the site...">
-            <img src="assets/search.svg" />
+          <!-- <input type="text" placeholder="Sök"/> -->
+          <input
+            type="text"
+            autocomplete="off"
+            name="search"
+            id="page-search-input"
+            required=""
+            class="search__input"
+            placeholder="Search the site..."
+          />
+          <img src="assets/search.svg" />
         </form>
-    </div>
-    
+      </div>
     </header>
 
     <main>
-<div class="box">
-    <a class="mobile-nav">
-        <button class="hamburger" type="button">
+      <div class="box">
+        <a class="mobile-nav">
+          <button class="hamburger" type="button">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
           </button>
         </a>
-    <!-- <nav>
-        <ul>
-            <li class="selected"><a href="/"><img src="assets/Ikoner/view-white.svg" /><span>Översikt</span></a></li>
-            <li><a href="/news.html"><img class="show" src="assets/Ikoner/paper.svg" /><img class="show-hover" src="assets/Ikoner/paper-white.svg" /><span>Nyhetsarkiv</span></a></li>
-            <li><a href="/documents.html"><img class="show" src="assets/Ikoner/open-folder.svg" /><img class="show-hover" src="assets/Ikoner/open-folder-white.svg" /><span>Dokument</span></a></li>
-            <li><a href="/partners.html"><img class="show" src="assets/Ikoner/privacy-policy.svg" /><img class="show-hover" src="assets/Ikoner/privacy-policy-white.svg" /><span>Samarbetsparners</span></a></li>
-            <li><a href="/contact.html"><img class="show" src="assets/Ikoner/send.svg" /><img class="show-hover" src="assets/Ikoner/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
-        </ul>
-    </nav> -->
-    <nav>
-         <ul>
-            <li class="selected"><a href="/svenskvardepappersservice/index.html"><img src="assets/Ikoner/view-white.svg" /><span>Översikt</span></a></li>
-            <li><a href="/svenskvardepappersservice/news.html"><img class="show" src="assets/Ikoner/paper.svg" /><img class="show-hover" src="assets/Ikoner/paper-white.svg" /><span>Nyhetsarkiv</span></a></li>
-            <li><a href="/svenskvardepappersservice/documents.html"><img class="show" src="assets/Ikoner/open-folder.svg" /><img class="show-hover" src="assets/Ikoner/open-folder-white.svg" /><span>Dokument</span></a></li>
-            <li><a href="/svenskvardepappersservice/partners.html"><img class="show" src="assets/Ikoner/privacy-policy.svg" /><img class="show-hover" src="assets/Ikoner/privacy-policy-white.svg" /><span>Samarbetsparners</span></a></li>
-            <li><a href="/svenskvardepappersservice/contact.html"><img class="show" src="assets/Ikoner/send.svg" /><img class="show-hover" src="assets/Ikoner/send-white.svg" /><span>Kontaktuppgifter</span></a></li>
-        </ul>
-    </nav>
-    <div class="main-section">
+        <nav>
+          <ul>
+            <li class="selected">
+              <a href="/index.html"
+                ><img src="assets/Ikoner/view-white.svg" /><span
+                  >Översikt</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="/news.html"
+                ><img class="show" src="assets/Ikoner/paper.svg" /><img
+                  class="show-hover"
+                  src="assets/Ikoner/paper-white.svg"
+                /><span>Nyhetsarkiv</span></a
+              >
+            </li>
+            <li>
+              <a href="/documents.html"
+                ><img class="show" src="assets/Ikoner/open-folder.svg" /><img
+                  class="show-hover"
+                  src="assets/Ikoner/open-folder-white.svg"
+                /><span>Dokument</span></a
+              >
+            </li>
+            <li>
+              <a href="/partners.html"
+                ><img class="show" src="assets/Ikoner/privacy-policy.svg" /><img
+                  class="show-hover"
+                  src="assets/Ikoner/privacy-policy-white.svg"
+                /><span>Samarbetsparners</span></a
+              >
+            </li>
+            <li>
+              <a href="/contact.html"
+                ><img class="show" src="assets/Ikoner/send.svg" /><img
+                  class="show-hover"
+                  src="assets/Ikoner/send-white.svg"
+                /><span>Kontaktuppgifter</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="main-section">
+          <div class="main-section__heading">
+            <a href="/index.html" class="main-section__back">
+              <img src="assets/Ikoner/ctrl-left.svg" alt="" />
+              <h1>Översikt</h1></a
+            >
+          </div>
 
-        <div class="main-section__heading">
-            <a href="/svenskvardepappersservice/index.html" class="main-section__back">
-                 <img src="assets/Ikoner/ctrl-left.svg" alt="">
-                <h1>Översikt</h1></a>
-           
-    </div>
-    
-<div class="overview">
-    <section class="overview__image">
-        <img class="bg-image lazyloaded" src="./assets/img/city.jpg" />
-    </section>
-    <div class="overview__content">
-        <div class="pre-head">
-            12 december 2020
+          <div class="overview">
+            <section class="overview__image">
+              <img class="bg-image lazyloaded" src="./assets/img/city.jpg" />
+            </section>
+            <div class="overview__content">
+              <div class="pre-head">12 december 2020</div>
+              <h1>Översikt</h1>
+              <p>
+                Fusce neque. Praesent congue erat at massa. Morbi mollis tellus
+                ac sapien. Nullam nulla eros, ultricies sit amet, nonummy id,
+                imperdiet feugiat, pede. Vivamus quis mi. Praesent venenatis
+                metus at tortor pulvinar varius. Mauris turpis nunc, blandit et,
+                volutpat molestie, porta ut, ligula.
+              </p>
+              <p>
+                Sed consequat, leo eget bibendum sodales, augue velit cursus
+                nunc, quis gravida magna mi a libero. Nulla porta dolor.
+                Suspendisse potenti. Nunc egestas, augue at pellentesque
+                laoreet, felis eros vehicula leo, at malesuada velit leo quis
+                pede.
+              </p>
+              <p>
+                Donec venenatis vulputate lorem. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia Curae; Sed
+                aliquam, nisi quis porttitor congue, elit erat euismod orci, ac
+                placerat dolor lectus quis orci. Sed lectus. Suspendisse
+                faucibus, nunc et pellentesque egestas, lacus ante convallis
+                tellus, vitae iaculis lacus elit id tortor. Suspendisse eu
+                ligula.
+              </p>
+            </div>
+          </div>
         </div>
-        <h1> Översikt </h1>
-        <p>Fusce neque. Praesent congue erat at massa. Morbi mollis tellus ac sapien. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.
-            Vivamus quis mi. Praesent venenatis metus at tortor pulvinar varius. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula.
-           </p>
-           <p>
-            Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.
-            Nulla porta dolor. Suspendisse potenti. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.
-             </p>
-            <p>
-            Donec venenatis vulputate lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-            Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Sed lectus. 
-            Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Suspendisse eu ligula.</p>
-    </div>
-</div>
-  
-    </div>  
-    </div>
-    <div class="footer"></div>
-</main>
+      </div>
+      <div class="footer"></div>
+    </main>
 
-
-    <script src="./js/app.js"></script>    
-</body>
+    <script src="./js/app.js"></script>
+  </body>
 </html>
